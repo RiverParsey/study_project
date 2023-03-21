@@ -1,4 +1,7 @@
 
+// Lesson : module1-task3
+// Первая программка
+
 // const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
 // const personalMovieDB = {
@@ -21,4 +24,53 @@
 
 
 // Next lesson : module1-task4
+// Условия
 
+// if (1) {
+//   console.log('Ok!');
+// } else {
+//   console.log('Error');
+// }
+
+// if (num < 49) {
+//   console.log('Error');
+// } else if (num > 100) {
+//   console.log('Too much');
+// } else {
+//   console.log('Ok!');
+// }
+
+// (num === 50) ? console.log('Ok!') : console.log('Error');
+
+// const num = '50';
+
+// switch (num) {
+//   case '49':
+//     console.log('Неверно');
+//     break;
+//   case '100':
+//     console.log('Неверно');
+//     break;
+//   case '50': 
+//     console.log('В точку');
+//     break;
+//   default:
+//     console.log('Не в этот раз');
+//     break;
+// }
+
+
+// Next lesson : module1-task5
+// Логические операторы
+
+//&&    Логическое И
+//||    Логическое ИлИ
+
+const hamburger = true;
+const fries = false;
+
+if (hamburger && fries) {
+  console.log('Я сыт!');
+}
+
+console.log(hamburger && fries);
