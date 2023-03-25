@@ -143,12 +143,12 @@
 // Next lesson : module1-task7
 // Циклы в цикле и метки
 
-for (let i = 0; i < 3; i++) {
-  console.log(i);
-  for (let j = 0; j < 3; j++) {
-    console.log(j);
-  }
-}
+// for (let i = 0; i < 3; i++) {
+//   console.log(i);
+//   for (let j = 0; j < 3; j++) {
+//     console.log(j);
+//   }
+// }
 
 // *
 // **
@@ -157,27 +157,145 @@ for (let i = 0; i < 3; i++) {
 // *****
 // ******
 
-let result = '';
-const length = 7;
+// let result = '';
+// const length = 7;
 
-for (let i = 1; i < length; i++) {
+// for (let i = 1; i < length; i++) {
 
-  for (let j = 0; j < i;  j++) {
-    result += "*";
+//   for (let j = 0; j < i;  j++) {
+//     result += "*";
+//   }
+
+//   result += '\n';
+// }
+
+// console.log(result);
+
+// first: for (let i = 0; i < 3; i++) {
+//   console.log(`First level: ${i}`);
+//   for (let j = 0; j < 3; j++) {
+//     console.log(`Second level: ${j}`);
+//     for (let k = 0; k < 5; k++) {
+//       if (k === 2) break first;
+//       console.log(`Third level: ${k}`);
+//     }
+//   }
+// }
+
+
+
+// for (let i = 5; i <= 180; i++) {
+//   if (i % 2 !== 0) {
+//     console.log(i);
+//   }
+// }
+
+
+// let i = 5;
+
+// while (i <= 180) {
+//   if (i % 2 === 0) {
+//     console.log(i);
+//   }
+//   i++;
+// }
+
+// // from 2 to 10
+
+// for (i = 2; i <=10; i++) {
+//   if (i % 2 === 0) {
+//     console.log(i);
+//   }
+// }
+
+// // change for to while
+
+// for (i = 0; i < 3; i++) {
+//   console.log(`number ${i}`);
+// }
+
+//     //////
+
+// let i = 0;
+
+// while (i < 3) {
+//   console.log(`number ${i}`);
+//   i++;
+// }
+
+// for (i = 2; i < 10; i++) {
+//   if (i % 2 === 1) {
+//     console.log(i);
+//   }
+// }
+
+// for (i = 5; i <= 10; i++) {
+//   console.log(i);
+// }
+
+// for (i = 20; i >= 10; i--) {
+//   console.log(i);
+// }
+
+// for (i = 2; i <= 10; i++) {
+//   if (i % 2 === 0) {
+//       console.log(i);
+//   }
+// }
+
+// for (let i = 2; i <= 16; i++) {
+//   if (i % 2 === 0) {
+//       continue;
+//   } else {
+//       console.log(i);
+//   }
+// }
+
+
+// Next lesson : module1-task8
+// Применяем условия и циклы
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false
+};
+
+// const a = prompt('Один из последних просмотренных фильмов?', ''),
+//       b = prompt('На сколько оцените его?', ''),
+//       c = prompt('Один из последних просмотренных фильмов?', ''),
+//       d = prompt('На сколько оцените его?', '');
+
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
+
+for (let i = 0; i < 2; i++) {
+  const a = prompt('Один из последних просмотренных фильмов?', ''),
+        b = prompt('На сколько оцените его?', '');
+
+  if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+    personalMovieDB[a] = b;
+    console.log('done');
+  } else {
+    console.log('error');
+    i--;
   }
 
-  result += '\n';
+  personalMovieDB.movies[a] = b;
 }
 
-console.log(result);
-
-first: for (let i = 0; i < 3; i++) {
-  console.log(`First level: ${i}`);
-  for (let j = 0; j < 3; j++) {
-    console.log(`Second level: ${j}`);
-    for (let k = 0; k < 5; k++) {
-      if (k === 2) break first;
-      console.log(`Third level: ${k}`);
-    }
-  }
+if (personalMovieDB.count < 10) {
+  console.log('просмотрено довольно мало фильмов');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+  console.log('вы классический зритель');
+} else if (personalMovieDB.count >= 30) {
+  console.log('вы киноман');
+} else {
+  console.log('произошла ошибка')
 }
+
+console.log(personalMovieDB);
