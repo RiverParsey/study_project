@@ -1,3 +1,4 @@
+"use strict"
 
 // Lesson : module1-task3
 // Первая программка
@@ -255,15 +256,15 @@
 // Next lesson : module1-task8
 // Применяем условия и циклы
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false
-};
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
 
 // const a = prompt('Один из последних просмотренных фильмов?', ''),
 //       b = prompt('На сколько оцените его?', ''),
@@ -273,29 +274,112 @@ const personalMovieDB = {
 // personalMovieDB.movies[a] = b;
 // personalMovieDB.movies[c] = d;
 
-for (let i = 0; i < 2; i++) {
-  const a = prompt('Один из последних просмотренных фильмов?', ''),
-        b = prompt('На сколько оцените его?', '');
+// for (let i = 0; i < 2; i++) {
+//   const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
 
-  if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-    personalMovieDB[a] = b;
-    console.log('done');
-  } else {
-    console.log('error');
-    i--;
-  }
+//   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//     personalMovieDB[a] = b;
+//     console.log('done');
+//   } else {
+//     console.log('error');
+//     i--;
+//   }
 
-  personalMovieDB.movies[a] = b;
+//   personalMovieDB.movies[a] = b;
+// }
+
+// if (personalMovieDB.count < 10) {
+//   console.log('просмотрено довольно мало фильмов');
+// } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//   console.log('вы классический зритель');
+// } else if (personalMovieDB.count >= 30) {
+//   console.log('вы киноман');
+// } else {
+//   console.log('произошла ошибка')
+// }
+
+// console.log(personalMovieDB);
+
+
+
+// for (i = 0; i <= 100; i++) {
+//   console.log(i);
+// }
+
+// for (i = 100; i >= 0; i--) {
+//   console.log(i);
+// }
+
+// for (i = 100; i >= 0; i--) {
+//   if (i % 2 === 0) {
+//     console.log(i);
+//   }
+// }
+
+// // Задача. Выведите столбец чисел от 1 до 50
+
+// let i = 1;
+
+// while (i <= 50) {
+//   console.log(i);
+//   i++;
+// }
+
+// for (i = 1; i <= 50; i++) {
+//   console.log(i);
+// }
+
+// // Задача. Дан массив с элементами [1, 2, 3, 4, 5]. С помощью цикла for выведите все эти элементы на экран.
+
+// let arr = [1, 2, 3, 4, 5];
+
+// for (i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+
+// Next lesson : module1-task9
+// функции и стрелочные функции
+
+let num = 20;
+
+function showFirstMessage(text) {
+  console.log(text);
+  let num = 10;
+  console.log(num);
 }
 
-if (personalMovieDB.count < 10) {
-  console.log('просмотрено довольно мало фильмов');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-  console.log('вы классический зритель');
-} else if (personalMovieDB.count >= 30) {
-  console.log('вы киноман');
-} else {
-  console.log('произошла ошибка')
+showFirstMessage("hello world");
+console.log(num);
+
+// function calc(a, b) {
+//   return (a + b);
+// }
+
+// console.log(calc(4 , 3));
+// console.log(calc(7 , 3));
+// console.log(calc(2 , 9));
+
+function ret() {
+  let num = 50;
+
+  // какой то код
+
+  return num;
 }
 
-console.log(personalMovieDB);
+const anotherNum = ret();
+console.log(anotherNum);
+
+const logger = function() {
+  console.log("Hello");
+};
+
+logger();
+
+const calc = (a , b) => {
+  console.log('1');
+  return a + b;
+};
+
