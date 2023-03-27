@@ -342,16 +342,16 @@
 // Next lesson : module1-task9
 // функции и стрелочные функции
 
-let num = 20;
+// let num = 20;
 
-function showFirstMessage(text) {
-  console.log(text);
-  let num = 10;
-  console.log(num);
-}
+// function showFirstMessage(text) {
+//   console.log(text);
+//   let num = 10;
+//   console.log(num);
+// }
 
-showFirstMessage("hello world");
-console.log(num);
+// showFirstMessage("hello world");
+// console.log(num);
 
 // function calc(a, b) {
 //   return (a + b);
@@ -361,25 +361,28 @@ console.log(num);
 // console.log(calc(7 , 3));
 // console.log(calc(2 , 9));
 
-function ret() {
-  let num = 50;
+// function ret() {
+//   let num = 50;
 
-  // какой то код
+//   // какой то код
 
-  return num;
-}
+//   return num;
+// }
 
-const anotherNum = ret();
-console.log(anotherNum);
+// const anotherNum = ret();
+// console.log(anotherNum);
 
-const logger = function() {
-  console.log("Hello");
-};
+// const logger = function() {
+//   console.log("Hello");
+// };
 
-logger();
+// logger();
 
-const calc = (a , b) => {
-  console.log('1');
-  return a + b;
-};
+// const calc = (a , b) => {
+//   console.log('1');
+//   return a + b;
+// };
 
+
+// Next lesson : module1-task10
+// про важность return
