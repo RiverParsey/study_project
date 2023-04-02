@@ -385,4 +385,53 @@
 
 
 // Next lesson : module1-task10
-// про важность return
+// Еще раз про аргументы и функции
+
+// const usdCurr = 28;
+// const eurCurr = 32;
+
+// function convert(amount) {
+//   console.log(usdCurr * amount);
+// }
+
+// convert(500);
+
+// Неверно
+
+// function convert(amount, curr) {
+//   console.log(curr * amount);
+// }
+
+// convert(500, usdCurr);
+// convert(500, eurCurr);
+
+// Верно, универсальная функция
+
+
+// Next lesson : module1-task11
+// Про важность return
+
+
+// Next lesson : module1-task12
+// Методы и свойства строк и чисел
+
+const str = 'test';
+const arr = [1, 2, 3];
+
+console.log(arr.length);
+
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+
+const fruit = 'Some fruit';
+
+console.log(fruit.indexOf('fruit'));
+
+const logg = 'Hello world';
+
+console.log(logg.slice(6, 10));
+console.log(logg.slice(6));
+console.log(logg.slice(-5, -1));
+
+console.log(logg.substring(6, 11)); // не поддерживает отрицательное значение
+
