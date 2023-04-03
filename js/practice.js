@@ -95,3 +95,37 @@ hello();
 // Напишите функцию hello2(), которая при вызове будет принимать переменную name (например, «Василий») и выводить строку (в нашем случае «Привет, Василий»).
 // В случае отсутствующего аргумента выводить «Привет, гость»
 
+
+
+let videoGames = [];
+
+videoGames[0] = 'God of War';
+videoGames[1] = 'Call of Duty'
+
+videoGames.push('SpiderMan');
+videoGames.unshift('Battlefield');
+
+let lastGame = videoGames.pop();
+
+console.log(videoGames);
+console.log(lastGame);
+
+
+let number = 5.27984325;
+
+Math.floor(number);
+
+console.log(number);
+
+
+const randomBodyParts = ['szem', 'koponya', 'orr'];
+const randomAbjectives = ['letargias', 'budos', 'hulye'];
+const randomWords = ['vidra', 'szunyog', 'majom', 'patkany'];
+
+const randomBodyPart = randomBodyParts[Math.floor(Math.random() * 3)];
+const randomAbjective = randomAbjectives[Math.floor(Math.random() * 3)];
+const randomWord = randomWords[Math.floor(Math.random() * 4)];
+
+const randomInsult = 'Neked az ' + randomBodyPart + ' mintha ' + randomAbjective + ' ' + randomWord + '!!!';
+
+console.log(randomInsult);
