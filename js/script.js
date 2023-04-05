@@ -524,28 +524,53 @@
 // Next lesson : module1-task14
 // Callback функции
 
-function first() {
-  // do something
+// function first() {
+//   // do something
 
-  setTimeout(function() {
-    console.log(1);
-  }, 500);
+//   setTimeout(function() {
+//     console.log(1);
+//   }, 500);
+// }
+
+// function second() {
+//   console.log(2);
+// }
+
+// first();
+// second();
+
+// function learnJS(lang, callback) {
+//   console.log(`Я учу: ${lang}`);
+//   callback();
+// }
+
+// function done() {
+//   console.log('Я прошел этот урок!');
+// }
+
+// learnJS('Javascript', done);
+
+
+// Next lesson : module1-task15
+// Объекты, деструктуризация объектов
+
+const options = {
+  name: 'test',
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: 'black',
+    bg: 'red'
+  }
+};
+
+for (let key in options) {
+  if (typeof(options[key]) === 'object') {
+    for (let i in options[key]) {
+      console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+    }
+  } else {
+      console.log(`Свойство ${key} имеет значение ${options[key]}`);
+  }
 }
 
-function second() {
-  console.log(2);
-}
-
-first();
-second();
-
-function learnJS(lang, callback) {
-  console.log(`Я учу: ${lang}`);
-  callback();
-}
-
-function done() {
-  console.log('Я прошел этот урок!');
-}
-
-learnJS('Javascript', done);

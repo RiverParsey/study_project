@@ -129,3 +129,26 @@ const randomWord = randomWords[Math.floor(Math.random() * 4)];
 const randomInsult = 'Neked az ' + randomBodyPart + ' mintha ' + randomAbjective + ' ' + randomWord + '!!!';
 
 console.log(randomInsult);
+
+const dog = {
+  name: 'john',
+  age: 8,
+  color: 'black'
+};
+
+console.log(Object.keys(dog));
+
+let cat = {};
+
+cat['legs'] = 4;
+cat['name'] = 'Stepan';
+
+ console.log(cat);
+
+let newCat = {};
+
+newCat.legs = 4;
+newCat.name = 'alex';
+newCat.age = 8;
+
+console.log(newCat);
