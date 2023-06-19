@@ -1,5 +1,13 @@
 "use strict"
 
+// const answers = [];  // создаем переменную массив
+
+// answers[0] = prompt('как ваше имя?', '');  // ответ станет первым элементом массива
+
+// const user = 'Richard';
+
+// console.log(`Hello, ${user}`);
+
 // Lesson : module1-task3
 // Первая программка
 
@@ -23,14 +31,42 @@
 
 // console.log(personalMovieDB.movies['logan']);
 
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
+
+// const a = prompt('Один из просмотренных фильмов?', ''),
+//       b = prompt('На сколько оцените его?', ''),
+//       c = prompt('Один из просмотренных фильмов?', ''),
+//       d = prompt('На сколько оцените его?', '');
+
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
+
+// console.log(personalMovieDB);
 // Next lesson : module1-task4
 // Условия
+
+
 
 // if (1) {
 //   console.log('Ok!');
 // } else {
 //   console.log('Error');
+// }
+
+// const num = 50;
+
+// if (num > 100) {
+//   console.log('Ok!');
+// } else {
+//   console.log('Error!');
 // }
 
 // if (num < 49) {
@@ -53,6 +89,23 @@
 //     console.log('Неверно');
 //     break;
 //   case '50': 
+//     console.log('В точку');
+//     break;
+//   default:
+//     console.log('Не в этот раз');
+//     break;
+// }
+
+// const num = 50;
+
+// switch (num) {
+//   case 49:
+//     console.log('Неверно');
+//     break;
+//   case 100:
+//     console.log('Неверно');
+//     break;
+//   case 51:
 //     console.log('В точку');
 //     break;
 //   default:
@@ -140,6 +193,10 @@
 //   console.log(i);
 // }
 
+// for (let i = 0; i <= 10; i++) {
+//   console.log(i);
+// }
+
 
 // Next lesson : module1-task7
 // Циклы в цикле и метки
@@ -150,6 +207,20 @@
 //     console.log(j);
 //   }
 // }
+
+// let result = '';
+// let length = 7;
+
+// for (let i = 1; i < length; i++) {
+
+//   for (let j = 0; j < i; j++) {
+//     result += '*';
+//   }
+
+//   result += '\n';
+// }
+
+// console.log(result);
 
 // *
 // **
@@ -176,12 +247,24 @@
 //   console.log(`First level: ${i}`);
 //   for (let j = 0; j < 3; j++) {
 //     console.log(`Second level: ${j}`);
+//     for (let k = 0; k < 3; k++) {
+//       if (k === 2) break first;
+//       console.log(`Third level: ${k}`);
+//     }
+//   }
+// }
+
+// first: for (let i = 0; i < 3; i++) {
+//   console.log(`First level: ${i}`);
+//   for (let j = 0; j < 3; j++) {
+//     console.log(`Second level: ${j}`);
 //     for (let k = 0; k < 5; k++) {
 //       if (k === 2) break first;
 //       console.log(`Third level: ${k}`);
 //     }
 //   }
 // }
+
 
 
 
@@ -266,13 +349,25 @@
 //   privat: false
 // };
 
-// const a = prompt('Один из последних просмотренных фильмов?', ''),
-//       b = prompt('На сколько оцените его?', ''),
-//       c = prompt('Один из последних просмотренных фильмов?', ''),
-//       d = prompt('На сколько оцените его?', '');
 
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
+// for (let i = 0; i < 2; i++) {
+//   const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
+
+//   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//     personalMovieDB.movies[a] = b;
+//     console.log('done');
+//   } else {
+//     console.log('error');
+//     i--;
+//   }
+// }
+
+// if (personalMovieDB.count < 10) {
+//   console.log('просмотрено довольно мало фильмов')
+// }
+
+// console.log(personalMovieDB);
 
 // for (let i = 0; i < 2; i++) {
 //   const a = prompt('Один из последних просмотренных фильмов?', ''),
@@ -554,23 +649,56 @@
 // Next lesson : module1-task15
 // Объекты, деструктуризация объектов
 
-const options = {
-  name: 'test',
-  width: 1024,
-  height: 1024,
-  colors: {
-    border: 'black',
-    bg: 'red'
-  }
-};
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   }
+// };
 
-for (let key in options) {
-  if (typeof(options[key]) === 'object') {
-    for (let i in options[key]) {
-      console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-    }
-  } else {
-      console.log(`Свойство ${key} имеет значение ${options[key]}`);
-  }
-}
+// for (let key in options) {
+//   if (typeof(options[key]) === 'object') {
+//     for (let i in options[key]) {
+//       console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//     }
+//   } else {
+//       console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//   }
+// }
 
+
+// Next lesson : module1-task16
+// Массивы и псевдомассивы
+
+// const arr = [1, 2, 3, 6, 8];
+
+// // arr[99] = 0;
+// // console.log(arr.length);
+// // console.log(arr);
+
+// arr.forEach(function(item, i, arr) {  // первый аргумень. элементы перебора, называть как угодно
+//   console.log(`${i}: ${item} внутри массива ${arr}`);                      // второй: номер по порядку переменная i
+// });                                       // третий аргумень: ссылка на массив который необходимо перебрать
+
+
+// arr.pop();
+// arr.push(10);
+
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }  
+
+// for (let value of arr) {
+//   console.log(value);
+// }
+
+// Next lesson: module1-task17
+// Forgot how to use github, but its already done
+
+// Next lesson: module1-task18
+// Testing my github memory
