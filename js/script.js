@@ -703,8 +703,23 @@
 // Next lesson: module1-task18
 // Testing my github memory
 
+// Next lesson: module1-task19
+
+// for (let i = 0; i < 10; i++) {
+//   console.log(i);
+// }
+
 // Next lesson: module1-task20
 
-for (let i = 0; i < 10; i++) {
-  console.log(i);
-}
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+          b = prompt('На сколько оцените его?', '');
+  
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+      personalMovieDB.movies[a] = b;
+      console.log('done');
+    } else {
+      console.log('error');
+      i--;
+    }
+  }
