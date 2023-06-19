@@ -339,25 +339,35 @@
 // Next lesson : module1-task8
 // Применяем условия и циклы
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false
-};
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
 
 
-for (let i = 0; i < 2; i++) {
-  const a = prompt('Один из последних просмотренных фильмов?', ''),
-        b = prompt('На сколько оцените его?', '');
+// for (let i = 0; i < 2; i++) {
+//   const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
 
-  personalMovieDB.movies[a] = b;
-}
+//   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//     personalMovieDB.movies[a] = b;
+//     console.log('done');
+//   } else {
+//     console.log('error');
+//     i--;
+//   }
+// }
 
-console.log(personalMovieDB);
+// if (personalMovieDB.count < 10) {
+//   console.log('просмотрено довольно мало фильмов')
+// }
+
+// console.log(personalMovieDB);
 
 // for (let i = 0; i < 2; i++) {
 //   const a = prompt('Один из последних просмотренных фильмов?', ''),
@@ -663,15 +673,15 @@ console.log(personalMovieDB);
 // Next lesson : module1-task16
 // Массивы и псевдомассивы
 
-const arr = [1, 2, 3, 6, 8];
+// const arr = [1, 2, 3, 6, 8];
 
-// arr[99] = 0;
-// console.log(arr.length);
-// console.log(arr);
+// // arr[99] = 0;
+// // console.log(arr.length);
+// // console.log(arr);
 
-arr.forEach(function(item, i, arr) {  // первый аргумень. элементы перебора, называть как угодно
-  console.log(`${i}: ${item} внутри массива ${arr}`);                      // второй: номер по порядку переменная i
-});                                       // третий аргумень: ссылка на массив который необходимо перебрать
+// arr.forEach(function(item, i, arr) {  // первый аргумень. элементы перебора, называть как угодно
+//   console.log(`${i}: ${item} внутри массива ${arr}`);                      // второй: номер по порядку переменная i
+// });                                       // третий аргумень: ссылка на массив который необходимо перебрать
 
 
 // arr.pop();
@@ -683,6 +693,12 @@ arr.forEach(function(item, i, arr) {  // первый аргумень. элем
 //   console.log(arr[i]);
 // }  
 
-for (let value of arr) {
-  console.log(value);
-}
+// for (let value of arr) {
+//   console.log(value);
+// }
+
+// Next lesson: module1-task17
+// Forgot how to use github, but its already done
+
+// Next lesson: module1-task18
+// Testing my github memory
