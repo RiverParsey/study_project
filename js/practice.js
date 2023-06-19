@@ -152,3 +152,67 @@ newCat.name = 'alex';
 newCat.age = 8;
 
 console.log(newCat);
+
+const newObj = {
+  name: 'sanya',
+  width: 960,
+  height: 960,
+  color: {
+    border: 'black',
+    bg: 'red'
+  }
+}
+
+for (let key in newObj) {
+  if (typeof(newObj[key]) === 'object') {
+    for (let i in newObj[key]) {
+      console.log(`${i} : ${newObj[key][i]}`);
+    }
+  } else {
+    console.log(`${key} : ${newObj[key]}`);
+  }
+}
+
+const secondObj = {
+  name: 'misha',
+  age: 17,
+  width: 350,
+  height: 124,
+  colors: {
+    bg: 'transparent',
+    border: 'red',
+    button: 'green'
+  }
+}
+
+for (let key in secondObj) {
+  if (typeof(secondObj[key]) === 'object') {
+    for (let i in secondObj[key]) {
+      console.log(`${i} : ${secondObj[key][i]}`);
+    }
+  } else {
+    console.log(`${key} : ${secondObj[key]}`);
+  }
+}
+
+const thirdObj = {
+  type: 'animal',
+  name: 'cat',
+  legs: 3,
+  width: 540,
+  height: 320,
+  colores: {
+    paws: 'black',
+    body: 'white'
+  }
+}
+
+for (let key in thirdObj) {
+  if (typeof(thirdObj[key]) === 'object') {
+    for (let i in thirdObj[key]) {
+      console.log(`${i} : ${thirdObj[key][i]}`);
+    }
+  } else {
+    console.log(`${key} : ${thirdObj[key]}`);
+  }
+}
