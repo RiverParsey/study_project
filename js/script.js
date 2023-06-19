@@ -702,3 +702,9 @@
 
 // Next lesson: module1-task18
 // Testing my github memory
+
+// Next lesson: module1-task20
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
