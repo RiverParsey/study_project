@@ -649,25 +649,25 @@
 // Next lesson : module1-task15
 // Объекты, деструктуризация объектов
 
-const options = {
-  name: 'test',
-  width: 1024,
-  height: 1024,
-  colors: {
-    border: 'black',
-    bg: 'red'
-  }
-};
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   }
+// };
 
-for (let key in options) {
-  if (typeof(options[key]) === 'object') {
-    for (let i in options[key]) {
-      console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-    }
-  } else {
-      console.log(`Свойство ${key} имеет значение ${options[key]}`);
-  }
-}
+// for (let key in options) {
+//   if (typeof(options[key]) === 'object') {
+//     for (let i in options[key]) {
+//       console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//     }
+//   } else {
+//       console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//   }
+// }
 
 
 // Next lesson : module1-task16
@@ -711,15 +711,15 @@ for (let key in options) {
 
 // Next lesson: module1-task20
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//           b = prompt('На сколько оцените его?', '');
   
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-      personalMovieDB.movies[a] = b;
-      console.log('done');
-    } else {
-      console.log('error');
-      i--;
-    }
-  }
+//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//       personalMovieDB.movies[a] = b;
+//       console.log('done');
+//     } else {
+//       console.log('error');
+//       i--;
+//     }
+//   }
