@@ -711,28 +711,59 @@
 
 // Next lesson: module1-task20
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//           b = prompt('На сколько оцените его?', '');
   
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-      personalMovieDB.movies[a] = b;
-      console.log('done');
-    } else {
-      console.log('error');
-      i--;
-    }
-  }
+//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//       personalMovieDB.movies[a] = b;
+//       console.log('done');
+//     } else {
+//       console.log('error');
+//       i--;
+//     }
+//   }
 
-  for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');
+//   for (let i = 0; i < 2; i++) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//           b = prompt('На сколько оцените его?', '');
   
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-      personalMovieDB.movies[a] = b;
-      console.log('done');
-    } else {
-      console.log('error');
-      i--;
-    }
-  }
+//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//       personalMovieDB.movies[a] = b;
+//       console.log('done');
+//     } else {
+//       console.log('error');
+//       i--;
+//     }
+//   }
+
+//  module1-task24 callback function
+
+function first() {
+  // do something
+  setTimeout(function() {
+    console.log(1);
+  }, 500);
+}
+
+function second() {
+  console.log(2);
+}
+
+first();
+second();
+
+function learnJS(lang, callback) {
+  console.log(`Я учу: ${lang}`);
+  callback();
+}
+
+function done() {
+  console.log('Я прошел этот урок!');
+}
+
+learnJS('JavaScript', done);
+
+learnJS('JavaScript', function() {
+  console.log('Я прошел этот урок!');
+});
