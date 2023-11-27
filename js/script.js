@@ -724,46 +724,125 @@
 //     }
 //   }
 
-//   for (let i = 0; i < 2; i++) {
-//     const a = prompt('Один из последних просмотренных фильмов?', ''),
-//           b = prompt('На сколько оцените его?', '');
+  // for (let i = 0; i < 2; i++) {
+  //   const a = prompt('Один из последних просмотренных фильмов?', ''),
+  //         b = prompt('На сколько оцените его?', '');
   
-//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-//       personalMovieDB.movies[a] = b;
-//       console.log('done');
-//     } else {
-//       console.log('error');
-//       i--;
-//     }
-//   }
+  //   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+  //     personalMovieDB.movies[a] = b;
+  //     console.log('done');
+  //   } else {
+  //     console.log('error');
+  //     i--;
+  //   }
+  // }
 
 //  module1-task24 callback function
 
-function first() {
-  // do something
-  setTimeout(function() {
-    console.log(1);
-  }, 500);
-}
+// function first() {
+//   // do something
+//   setTimeout(function() {
+//     console.log(1);
+//   }, 500);
+// }
 
-function second() {
-  console.log(2);
-}
+// function second() {
+//   console.log(2);
+// }
 
-first();
-second();
+// first();
+// second();
 
-function learnJS(lang, callback) {
-  console.log(`Я учу: ${lang}`);
-  callback();
-}
+// function learnJS(lang, callback) {
+//   console.log(`Я учу: ${lang}`);
+//   callback();
+// }
 
-function done() {
-  console.log('Я прошел этот урок!');
-}
+// function done() {
+//   console.log('Я прошел этот урок!');
+// }
 
-learnJS('JavaScript', done);
+// learnJS('JavaScript', done);
 
-learnJS('JavaScript', function() {
-  console.log('Я прошел этот урок!');
-});
+// learnJS('JavaScript', function() {
+//   console.log('Я прошел этот урок!');
+// });
+
+// module1-task25 обьекты, деструктуризация
+
+// const options = {
+//   name: 'test',
+//   width: 1024,
+//   height: 1024,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   },
+//   makeTest: function() {
+//     console.log('Test');
+//   }
+// };
+
+// options.makeTest();
+
+// console.log(options['colors']['border']);
+
+// delete options.name;
+
+// console.log(options);
+
+// let counter = 0;
+
+// for (let key in options) {
+//   if (typeof(options[key]) === 'object') {
+//     for (let i in options[key]) {
+//       console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//     }
+//   }
+//   else {
+//     console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//     counter++;
+//   }
+// }
+// console.log(counter);
+
+// console.log(Object.keys(options).length);
+
+// const fuckoff = {
+//   name: 'jack',
+//   width: 252,
+//   height: 2523,
+//   colors: {
+//     border: 'red',
+//     bg: 'blue'
+//   }
+// };
+
+// for (let key in fuckoff) {
+//   if (typeof(fuckoff[key]) === 'object') {
+//     for (let i in fuckoff[key]) {
+//       console.log(`${i} имеет значение ${fuckoff[key][i]}`);
+//     }
+//   } else {
+//     console.log(`${key} имеет значение ${fuckoff[key]}`);
+//   }
+// }
+
+// const options = {
+//   name: 'test',
+//   width: 252,
+//   height: 252,
+//   colors: {
+//     border: 'black',
+//     bg: 'red'
+//   },
+//   makeTest: function() {
+//     console.log('Test');
+//   }
+// };
+
+// options.makeTest();
+
+// const {border, bg} = options.colors;
+// console.log(border);
+// console.log(bg);
