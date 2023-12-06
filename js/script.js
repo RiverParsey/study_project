@@ -1130,3 +1130,104 @@
   //         i--;
   //       }
   //     }
+
+// module1-task31
+
+// const str = 'teSt';
+
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase());
+// console.log(str);
+
+// const fruit = 'Some fruit';
+
+// console.log(fruit.indexOf('q'));
+
+// const logg = 'Hello world';
+
+// console.log(logg.substr()); // устаревшая
+
+// console.log(logg.substring(6, 10));
+
+// console.log(logg.slice(-5, -1));
+
+// const stR = 'Darova Bratan';
+
+// console.log(stR.slice(0, 7));
+
+// const num = 12.2;
+// console.log(Math.round(num));
+
+// const test = '12.2px';
+// console.log(parseInt(test));
+// console.log(parseFloat(test));
+
+
+
+// let numberOfFilms;
+
+// function start() {
+//   numberOfFilms = +prompt('How many movies do you watch?', '');
+
+//   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//     numberOfFilms = +prompt('How many movies do you watch?', '');
+//   }
+// }
+
+// start();
+
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
+
+// function rememberMyFilms() {
+//   for (let i = 0; i < 2; i++) {
+//     const a = prompt('One of latest seen movies?', ''),
+//           b = prompt('How you like them?', '');
+  
+//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//       personalMovieDB.movies[a] = b;
+//       console.log('done');
+//     } else {
+//       console.log('error');
+//       i--;
+//     }
+//   }
+// }
+
+// rememberMyFilms();
+
+// function detectPersonalLevel() {
+//   if (personalMovieDB.count < 10) {
+//     console.log('Просмотрено довольно мало фильмов');
+//   } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//     console.log('Вы классический зритель');
+//   } else if (personalMovieDB.count >= 30) {
+//     console.log('Вы киноман');
+//   } else {
+//     console.log('Произошла ошибка');
+//   }
+// }
+
+// detectPersonalLevel();
+
+// function showMyDB(hidden) {
+//   if (!hidden) {
+//     console.log(personalMovieDB);
+//   }
+// }
+
+// showMyDB(personalMovieDB.privat);
+
+// function writeYourGenres() {
+//   for (let i = 1; i <= 3; i++) {
+//     const genre = prompt(`Ваш любимый жано под номером ${i}`);
+//     personalMovieDB.genres[i] = genre;
+//   }
+// }
+
+// writeYourGenres();
