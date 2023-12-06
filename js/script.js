@@ -1041,3 +1041,92 @@
 
 // console.log(jonh.armor);
 // jonh.sayHello();
+
+// module1-task30   используем обьекты
+
+
+
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//       const a = prompt('Один из последних просмотренных фильмов?', '');
+//             b = prompt('На сколько вы оцените его?', '');
+  
+//       if (a !== null && b !== null && a != '' && b != '' && a.length < 50) {
+//         console.log('done');
+//       } else {
+//         console.log('error');
+//         i--;
+//       }
+//     }
+//   }
+  
+  // rememberMyFilms();
+  
+  
+  // const personalMovieDB = {
+  //   count: 5,
+  //   movies: {
+  //     "Inception": 9,
+  //     "The Shawshank Redemption": 10,
+  //     "The Dark Knight": 8,
+  //     "Pulp Fiction": 7,
+  //     "Forrest Gump": 9
+  //   },
+  //   actors: {
+  //     "Leonardo DiCaprio": "Cobb",
+  //     "Tim Robbins": "Andy Dufresne",
+  //     "Christian Bale": "Bruce Wayne",
+  //     "John Travolta": "Vincent Vega",
+  //     "Tom Hanks": "Forrest Gump"
+  //   },
+  //   genres: ["Sci-Fi", "Drama", "Action", "Crime", "Romance"],
+  //   privat: false,
+
+  //   toggleVisibilityDb: function() {
+  //     this.privat = !this.privat;
+  //   }
+
+  // };
+
+  // personalMovieDB.toggleVisibilityDb();
+
+
+  // function showMyDB(hidden) {
+  //   if (!hidden) {
+  //     console.log(personalMovieDB);
+  //   } else {
+  //     console.log('Access denied, base is privat');
+  //   }
+  // }
+  
+  // showMyDB(personalMovieDB.privat);
+  
+  // // personalMovieDB.toggleVisibilityDb();
+  // showMyDB(personalMovieDB.privat);
+
+
+  // for (let i = 0; i < 2; i++) {
+  //       const a = prompt('Один из последних просмотренных фильмов?', ''),
+  //             b = prompt('На сколько оцените его?', '');
+      
+  //       if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+  //         personalMovieDB.movies[a] = b;
+  //         console.log('done');
+  //       } else {
+  //         console.log('error');
+  //         i--;
+  //       }
+  //     }
+    
+  //     for (let i = 0; i < 2; i++) {
+  //       const a = prompt('Один из последних просмотренных фильмов?', ''),
+  //             b = prompt('На сколько оцените его?', '');
+      
+  //       if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+  //         personalMovieDB.movies[a] = b;
+  //         console.log('done');
+  //       } else {
+  //         console.log('error');
+  //         i--;
+  //       }
+  //     }
