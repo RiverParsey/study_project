@@ -1413,3 +1413,41 @@
 // const {name, age} = user;
 
 // console.log(user);
+
+
+
+// module1-task36  задачи с собеседований на понимае основ
+
+// let x = 5; 
+// alert(x++);
+
+// [] + false - null + true;
+// console.log(typeof([] + false));  // false   string
+// console.log(typeof([] + false - null + true));  // NaN
+
+
+// let y = 1;
+// let z = y = 2;
+// alert(x);
+
+// [] + 1 + 2;
+// console.log([] + 1 + 2);  // '12'
+
+// alert('1'[0]);
+
+// 2 && 1 && null && 0 && undefined;
+
+// console.log(!!(1 && 2) === (1 && 2));
+
+// (null || 2 && 3 || 4);
+
+// let a = [1, 2, 3];
+// let b = [1, 2, 3];
+// // is a == b?
+
+// alert(+'infinity');
+
+// 'ёжик' > 'яблоко';
+// console.log('Ёжик' > 'яблоко');
+
+// 0 || '' || 2 || undefined || true || false;  // return first true, is 2
