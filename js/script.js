@@ -1451,3 +1451,27 @@
 // console.log('Ёжик' > 'яблоко');
 
 // 0 || '' || 2 || undefined || true || false;  // return first true, is 2
+
+
+//  module1-task37  Получение элементов со страницы
+
+
+// const box = document.getElementById('box');
+// console.log(box);
+
+// const btns = document.getElementsByTagName('button');
+// console.log(btns[0]);
+
+// const circles = document.getElementsByClassName('circle');
+// console.log(circles);
+
+// const hearts = document.querySelectorAll('.heart');
+// hearts.forEach(item => {
+//   console.log(item);
+// });
+
+// const oneHeart = document.querySelector('.heart');
+// console.log(oneHeart);
+
+// const btn = document.querySelector('button');
+// console.log(btn);
