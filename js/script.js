@@ -1595,3 +1595,48 @@
 //         </li>
 //     `;
 // });
+
+
+
+// module1-task40  события и их обработчики
+
+
+// const btns = document.querySelectorAll('button'),
+//       overlay = document.querySelector('.overlay');
+
+// let i = 0;
+// const deleteElement = (event) => {
+//   console.log(event.currentTarget);
+//   console.log(event.type);
+//   // i++;
+//   // if (i == 1) {
+//   //   btn.removeEventListener('click', deleteElement);
+//   // }
+// }
+
+// btn.onclick = function() {
+//   alert('click');
+// };
+
+// btn.onclick = function() {
+//   alert('second click');
+// };
+
+// btns.forEach(btn => {
+//   btn.addEventListener('click', deleteElement);
+// });
+
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
+
+// btn.addEventListener('click', () => {
+//   alert('second click');
+// });
+
+// const link = document.querySelector('a');
+
+// link.addEventListener('click', (event) => {
+//   event.preventDefault();
+
+//   console.log(event.target);
+// });
