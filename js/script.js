@@ -1640,3 +1640,50 @@
 
 //   console.log(event.target);
 // });
+
+// const btn = document.querySelector('button');
+
+// btn.onclick = function() { // old version
+//   alert('click');
+// };
+
+// btn.addEventListener('click', () => {
+//   alert('click'); // good version
+// });
+
+// let i = 0;
+// const deleteElement = (event) => {
+//   console.log(event.target);
+//   i++;
+//   if (i == 1) {
+//     btn.removeEventListener('mouseenter', deleteElement);
+//   }
+// };
+
+// btn.addEventListener('mouseenter', deleteElement);
+// btn.removeEventListener('mouseenter', deleteElement);
+
+
+
+// module1-task41  навигация по DOM
+
+// console.log(document.body);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstChild);
+// console.log(document.body.firstElementChild);
+// console.log(document.body.lastChild);
+
+// console.log(document.querySelector('#btn').parentNode.parentNode);
+// console.log(document.querySelector('#btn').parentElement);
+
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+// console.log(document.querySelector('[data-current="3"]').previousElementSibling);
+
+// for (let node of document.body.childNodes) {
+//   if (node.nodeName == '#text') {
+//     continue;
+//   }
+
+//   console.log(node);
+// }
