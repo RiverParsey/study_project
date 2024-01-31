@@ -1883,3 +1883,50 @@
 //   createMovieList(movieDB.movies, movieList);
 
 // });
+
+
+// module1-task44  события на мобильных устройствах
+
+// touchstart
+// touchmove
+// touchend
+// touchenter
+// touchleave
+// touchcancel
+
+// window.addEventListener('DOMContentLoaded', () => {
+//   const box = document.querySelector('.box');
+
+//   box.addEventListener('touchstart', (e) => {
+//     e.preventDefault();
+
+//     console.log('start');
+//   });
+
+//   box.addEventListener('touchmove', (e) => {
+//     e.preventDefault();
+
+//     console.log('move');
+//   });
+
+//   box.addEventListener('touchend', (e) => {
+//     e.preventDefault();
+
+//     console.log('end');
+//   });
+
+// });
+// console.log(2 % 13);
+
+
+// function nextInLine(arr, item) {
+//   // Only change code below this line
+//   arr.push(item);
+//   const removed = arr.shift();
+//   return removed;
+//   // Only change code above this line
+// }
+
+// const arr = [1, 2, 3, 4, 5];
+
+// console.log(nextInLine([1, 3]));
