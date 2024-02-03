@@ -1952,3 +1952,36 @@
 // let userKey;
 
 // console.log(userName ?? userKey ?? 'User');
+
+
+// module1-task46 оператор опциональной цепочки
+
+// const box = document.querySelector('.box');
+// const block = document.querySelector('.block');
+
+// console.log(block);
+
+// // if (block) {
+// //   console.log(block.textContent);
+// // }
+
+// // block?.textContent = '123';
+
+// // console.log(1 + 2);
+
+// const userData = {
+//   name: 'Ivan',
+//   age: null,
+//   say: function() {
+//     console.log('hello');
+//   }
+// }
+
+// userData.say();
+// userData.hey?.();
+
+// // if (userData && userData.skills && userData.skills.js) {
+// //   console.log(userData.skills.js);
+// // }
+
+// console.log(userData?.skill?.js);
