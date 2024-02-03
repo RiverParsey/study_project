@@ -1930,3 +1930,25 @@
 // const arr = [1, 2, 3, 4, 5];
 
 // console.log(nextInLine([1, 3]));
+
+
+// module1-task46 nullish operator
+
+// const box = document.querySelector('.box');
+
+// const newHeight = 100;
+// const newWidth = 400;
+
+// function changeParams(elem, h, w) {
+//     elem.style.height = `${h ?? 200}px`;
+//     elem.style.width = `${w ?? 200}px`;
+//     elem.innerHTML = (h ?? 200) * (w ?? 200);
+// }
+
+// changeParams(box, newHeight, newWidth);
+
+
+// let userName;
+// let userKey;
+
+// console.log(userName ?? userKey ?? 'User');
