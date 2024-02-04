@@ -2013,3 +2013,38 @@
 // // console.log(document.body.children);
 
 // console.log(Array.from(boxesGet));
+
+
+// module1-task48  тип данных symbol
+
+
+// let id = Symbol("id");
+
+// const obj = {
+//   name: 'Test',
+//   id: 1,
+//   getId: function() {
+//     return this(id);
+//   }
+// }
+
+// // let id2 = Symbol("id");
+
+// // console.log(id === id2);
+
+// // obj[id] = 1;
+
+// console.log(Object.getOwnPropertySymbols(obj));
+
+const myAwesomeDB = {
+  movies: [],
+  actors: [],
+  [Symbol("id")]: 123
+}
+
+// сторонний код библиотеки
+
+myAwesomeDB.id = "3233423425";
+
+console.log(myAwesomeDB["id"]);
+console.log(myAwesomeDB);
