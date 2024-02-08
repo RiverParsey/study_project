@@ -2174,3 +2174,95 @@
 // map.forEach((value, key, map) => {
 //   console.log(key, value);
 // })
+
+
+
+// module1-task54 ClassList и делегирование событий
+
+// const btns = document.querySelectorAll('button'),
+//       wrapper = document.querySelector('.btn-block');
+
+// console.log(btns[0].classList.length);
+// console.log(btns[0].classList.item(1));
+// console.log(btns[1].classList.add('red'));
+// console.log(btns[0].classList.remove('blue'));
+// console.log(btns[0].classList.toggle('blue'));
+
+// if (btns[1].classList.contains('red')) {
+//   console.log('red');
+// }
+
+// btns[0].addEventListener('click', () => {
+  // if (!btns[1].classList.contains('red')) {
+  //   btns[1].classList.add('red');
+  // } else {
+  //   btns[1].classList.remove('red');
+  // }
+
+  // btns[1].classList.toggle('red');
+// });
+
+// console.log(btns[0].className);
+
+// wrapper.addEventListener('click', (event) => {
+//   if (event.target && event.target.tagName == 'BUTTON') {
+//     console.log('hello');
+//   }
+// })
+
+// btns.forEach(btn => {
+//   btn.addEventListener('click', () => {
+//     console.log('hello');
+//   })
+// })
+
+// const btn = document.createElement('button');
+// btn.classList.add('red');
+// wrapper.append(btn);
+
+// const btns = document.querySelectorAll('button'),
+//       wrapper = document.querySelector('.btn-block');
+
+// console.log(btns[0].classList.length); // можно узнать кол-во классов элемента
+// console.log(btns[0].classList.item(0)); // можно обратиться по индексу
+// console.log(btns[0].classList.add('red', 'second-class')); // можно додавать классы
+// console.log(btns[0].classList.remove('blue')); // можно удалять классы
+// console.log(btns[0].classList.toggle('blue')); // позволяет тогглить классы
+
+// if (btns[1].classList.contains('red')) { // проверяет наличие класса
+//   console.log('red');
+// }
+
+// btns[0].addEventListener('click', () => {
+//   // if (!btns[1].classList.contains('red')) {
+//   //   btns[1].classList.add('red');
+//   // } else {
+//   //   btns[1].classList.remove('red');
+//   // }
+
+//   btns[1].classList.toggle('red');
+// });
+
+// console.log(btns[1].className); // этот метод устарел
+
+wrapper.addEventListener('click', (event) => { // event обьект события, содержит инфу о событии на элементе
+  if (event.target && event.target.tagName == 'BUTTON') {
+    console.log('Hello');
+  }
+}); // делегирование события на обертку
+
+wrapper.addEventListener('click', (event) => { // event обьект события, содержит инфу о событии на элементе
+  if (event.target && event.target.matches('button.red')) {
+    console.log('Hello');
+  }
+}); // делегирование через matches
+
+// btns.forEach(btn => {
+//   btn.addEventListener('click', () => {
+//     console.log('hello'); // делегирования нет, скрипт не работает с новыми элементами
+//   })
+// })
+
+// const btn = document.createElement('button'); // создает новый элемент
+// btn.classList.add('red'); // добавляет класс
+// wrapper.append(btn); // вставляет элемент в обертку wrapper
