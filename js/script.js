@@ -2310,3 +2310,56 @@
 //   })
 
 // });
+
+
+
+// module1-task56  setTimeout setInterval управление временем выполнения скриптов
+
+
+// const timerId = setTimeout(function(text) { // внуть setTimeout поместили функцию с банальным console.log()
+//   console.log(text);
+// }, 2000, 'hello'); // указываем время через которое должен сработать код в теле функции в миллисекундах, 2000мс = 2с, плюс аргумент text
+
+
+// const timerID = setTimeout(logger, 2000); // передаем параметры и время задержки выполнения
+
+// function logger () {
+//   console.log('text');
+// }
+
+// clearInterval(timerId); // комманда для зброса интервала
+
+// const btn = document.querySelector('.btn');
+
+// btn.addEventListener('click', () => {
+//   // const timerID = setTimeout(logger, 2000);
+//   const timerID = setInterval(logger, 2000); // функция для многократного использования интервала каждые н времени
+// });
+
+// let id = setTimeout(function log() {
+//   console.log('hello');
+//   id = setTimeout(log, 500);
+// }, 500);
+
+// const btn = document.querySelector('.btn'); // создаем переменную
+// let timerId, // создаем пустую переменную глобально видимости
+//     i = 0; // устанавливаем итератору значение 0
+
+// function myAnimation() { // создаем функцию
+//   const elem = document.querySelector('.box'); // создаем переменную
+//   let position = 0; // значение 0 для позиционирования
+
+//   const id = setInterval(frame, 10);
+
+//   function frame() {
+//     if (position = 300) { // если position доходит до 300 очищаем интервал
+//       clearInterval(id);
+//     } else {
+//       position++;
+//       elem.style.top = position + 'px';
+//       elem.style.left = position + 'px';
+//     }
+//   }
+// }
+
+// btn.addEventListener('click', myAnimation); // вешаем анимацию на кнопку
