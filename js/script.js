@@ -2245,17 +2245,17 @@
 
 // console.log(btns[1].className); // этот метод устарел
 
-wrapper.addEventListener('click', (event) => { // event обьект события, содержит инфу о событии на элементе
-  if (event.target && event.target.tagName == 'BUTTON') {
-    console.log('Hello');
-  }
-}); // делегирование события на обертку
+// wrapper.addEventListener('click', (event) => { // event обьект события, содержит инфу о событии на элементе
+//   if (event.target && event.target.tagName == 'BUTTON') {
+//     console.log('Hello');
+//   }
+// }); // делегирование события на обертку
 
-wrapper.addEventListener('click', (event) => { // event обьект события, содержит инфу о событии на элементе
-  if (event.target && event.target.matches('button.red')) {
-    console.log('Hello');
-  }
-}); // делегирование через matches
+// wrapper.addEventListener('click', (event) => { // event обьект события, содержит инфу о событии на элементе
+//   if (event.target && event.target.matches('button.red')) {
+//     console.log('Hello');
+//   }
+// }); // делегирование через matches
 
 // btns.forEach(btn => {
 //   btn.addEventListener('click', () => {
@@ -2266,3 +2266,47 @@ wrapper.addEventListener('click', (event) => { // event обьект событ�
 // const btn = document.createElement('button'); // создает новый элемент
 // btn.classList.add('red'); // добавляет класс
 // wrapper.append(btn); // вставляет элемент в обертку wrapper
+
+
+// module1-task55 создаем табы в новом проекте
+
+// window.addEventListener('DOMContentLoaded', () => { // проверяет загруженный ли весь DOM
+
+//   const tabs = document.querySelectorAll('.tabheader__item'), // создает переменную со всеми элементами в tabheader
+//         tabsContent = document.querySelectorAll('.tabcontent'), // создает переменную со всеми карточками tabcontent
+//         tabsParent = document.querySelector('.tabheader__items'); // создает переменную с оберткой элементов tabheader
+
+//   function hideTabContent() { // создает функцию hideTabContent 
+//     tabsContent.forEach(item => { // запускает перебор с аргументом item
+//       item.classList.add('hide'); // добавляет класс hide 
+//       item.classList.remove('show', 'fade'); // удаляет класс show и fade(анимация)
+//     });
+
+//     tabs.forEach(item => { // перебоп с удалением класса tabheader__active на элементе
+//       item.classList.remove('tabheader__item_active');
+//     });
+//   }
+
+//   function showTabContent(i = 0) {  // создает функцию showTabContent с параметром итератором и делает default 0
+//     tabsContent[i].classList.add('show', 'fade'); // добавляет классы show и fade для всех обертки tabcontent
+//     tabsContent[i].classList.remove('hide');  // удаляет класс hide с того же элемента
+//     tabs[i].classList.add('tabheader__item_active'); // добавляет класс active item внутри tabheader__items
+//   }
+
+//   hideTabContent(); // вызов функции hideTabContent
+//   showTabContent(); // вызов функции showTabContent
+
+//   tabsParent.addEventListener('click', (event) => { // обработчик событий на нажатие с параметром event
+//     const target = event.target; // создает переменную для event.target
+
+//     if (target && target.classList.contains('tabheader__item')) { // условие для проверки наличия метода target и класса tabheader__item
+//       tabs.forEach((item, i) => { // перебор на каждый элемент tabheader__item с параметрами item и номером по порядку i-iterator
+//         if (target == item) { // если target == item вызываются функции hideTabContent и showTabContent
+//           hideTabContent();
+//           showTabContent(i);
+//         }
+//       })
+//     }
+//   })
+
+// });
