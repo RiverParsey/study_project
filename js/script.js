@@ -2363,3 +2363,44 @@
 // }
 
 // btn.addEventListener('click', myAnimation); // вешаем анимацию на кнопку
+
+
+// module1-task57 сборщик мусора и утечки памяти
+
+
+// function func() {
+//   window.smth = 'string'; // global variable, не может быть удалена сборщиком мусора
+// }
+
+// const someRes = getData();
+// const node = document.querySelector('.class'); // ссылка на переменную
+
+// setInterval(function() {
+//   if (node) {
+//     node.innerHTML = someRes; // ссылка на данные
+//   }
+// }, 1000); // память забивается ненужными данными
+
+// function outer() {
+//   const potentiallyHugeArray = [];
+//   return function inner() {
+//     potentiallyHugeArray.push('Hello');
+//     console.log('hello');
+//   }
+// }
+
+// const sayHello = outer();
+
+// function createElement() {
+//   const div = document.createElement('div');
+//   div.id = 'test';
+//   document.body.append(testDiv);
+// }
+
+// createElement();
+
+// function deleteElement() {
+//   document.body.removeChild(document.getElementById('test'));
+// }
+
+// deleteElement();
