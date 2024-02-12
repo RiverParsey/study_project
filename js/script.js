@@ -2474,3 +2474,99 @@
 
 // module1-task59 работа с датами
 
+// const now = new Date(2024, 2, 10, 20);
+
+// console.log(now);
+
+// const now = new Date(); // все в миллисекундах, начиная с 1970
+
+// console.log(now);
+
+// получение компонентов даты
+
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDate());
+// console.log(now.getHours());
+// console.log(now.getMinutes());
+// console.log(now.getDay());
+// console.log(now.getUTCHours()); // другой часовой пояс
+
+// console.log(now.getTimezoneOffset());
+// console.log(now.getTime()); // кол-во миллисекунд прошедшее с 1970
+
+
+// // установщики компонентов даты, меняем get на set
+
+// console.log(now.setHours(18)); // ориентируется на зону UTC
+
+// new Date.parse('2020-05-01'); // то же самое что и в первом примере только через метод parse
+
+
+
+// let start = new Date();
+
+// for (let i = 0; i < 100000; i++) { // разница дат start и end и будем временем выполнения
+//   let some = i ** 3;
+// }
+
+// let end = new Date();
+
+// alert(`цыкл отработал за ${end - start} миллисекунд`);
+
+
+
+// module1-task60 создаем таймер обратного отсчета на сайте
+
+
+// const deadline = '2020-05-11'; // создается переменная dealine
+
+// function getTimeRemaining(endtime) { // функция getTimeRemaining с параметром endtime
+//   const t = Date.parse(endtime) - Date.parse(new Date()), // переменная t для установления разницы во времени в миллисекундах
+//         days = Math.floor(t / (1000 * 60 * 60 * 24)),
+//         hours = Math.floor((t / (1000 * 60 * 60) % 24)),
+//         minutes = Math.floor((t / 1000 / 60) % 60),
+//         seconds = Math.floor((t / 1000) % 60);
+
+//   return { // возврат обьекта с значениями с вычислений
+//     'total': t,
+//     'days': days,
+//     'hours': hours,
+//     'minutes': minutes,
+//     'seconds': seconds
+//   };
+// }
+
+// function getZero(num) { // функция добавляет 0 если num меньше 10
+//   if (num >= 0 && num < 10) {
+//     return `0${num}`;
+//   } else {
+//     return num;
+//   }
+// }
+
+// function setClock(selector, endtime) {
+//   const timer = document.querySelector(selector),
+//   days = timer.querySelector('#days'),
+//   hours = timer.querySelector('#hours'),
+//   minutes = timer.querySelector('#minutes'),
+//   seconds = timer.querySelector('#seconds'),
+//   timeInterval = setInterval(updateClock, 1000);
+
+//   updateClock();
+
+//   function updateClock() {
+//     const t = getTimeRemaining(endtime);
+
+//     days.innerHTML = getZero(t.days);
+//     hours.innerHTML = getZero(t.hours);
+//     minutes.innerHTML = getZero(t.minutes);
+//     seconds.innerHTML = getZero(t.seconds);
+
+//     if (t.total <= 0) {
+//       clearInterval(timeInterval);
+//     }
+//   }
+// }
+
+// setClock('.timer', deadline);
