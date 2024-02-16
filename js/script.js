@@ -2778,3 +2778,18 @@
 // }
 
 // window.addEventListener('scroll', showModalByScroll);
+
+
+
+// module1-task65 MutationObserver, ResizeObserver и contenteditable
+
+
+// const box = document.querySelector('.box');
+
+// let observer = new MutationObserver(mutationRecords => {
+//   console.log(mutationRecords);
+// });
+
+// observer.observe(box, {
+//   childList: true
+// })
