@@ -2637,3 +2637,57 @@
 // }
 
 // setClock('.timer', deadline);
+
+
+
+// module1-task62 параметры документа, окна и работа с ними
+
+
+// const box = document.querySelector('.box'),
+//       btn = document.querySelector('button');
+
+// const width = box.clientWidth; // ширина без учета margin border и scroll
+// const height = box.clientHeight; // высота без учета margin border и scroll
+
+// console.log(width, height);
+
+
+// const width = box.offsetWidth; // ширина с учетом margin border и scroll
+// const height = box.offsetHeight; // высота с учетом margin border и scroll
+
+// console.log(width, height);
+
+
+// const width = box.scrollWidth; // ширина без учета полосы прокрутки
+// const height = box.scrollHeight; // высота всего окна вместе с невидимыми частями за полосой прокрутки
+
+// console.log(width, height);
+
+// btn.addEventListener('click', () => {
+//   box.style.height = box.scrollHeight + 'px'; // при клике на кнопку показывает весь текст
+// });
+
+
+// scrollTop и scrollLeft могут быть модифицированные, остальные только возвращают значение
+
+// btn.addEventListener('click', () => {
+//   console.log(box.scrollTop);
+// });
+
+
+// console.log(box.getBoundingClientRect()); // получает все кординаты которые есть у элемента
+// console.log(box.getBoundingClientRect().top); // получает только значение top
+
+
+// computed styles стили уже примененные к элементу, менять напрямую их никак нельзя
+
+
+// const style = window.getComputedStyle(box);
+
+// console.log(style);
+// console.log(style.display); // можно обратиться и к одному свойству через точку
+
+// методом getComputedStyle можем получить псевдоэлементы, только получение и проверка на соответсвие
+
+
+// console.log(document.documentElement.clientWidth()); // у document нет таких методов, только через documentElement
