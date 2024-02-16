@@ -2691,3 +2691,41 @@
 
 
 // console.log(document.documentElement.clientWidth()); // у document нет таких методов, только через documentElement
+
+
+
+// module1-task63 создаем модальное окно
+
+// const modalTrigger = document.querySelectorAll('[data-modal]'), //получаем все триггеры через data атрибут
+//       modal = document.querySelector('.modal'), // получаем модальное окно через класс modal
+//       modalCloseBtn = document.querySelector('[data-close]'); // получаем кнопку для закрытия окна через data атрибут
+
+// modalTrigger.forEach(btn => { // перебор всевдомассива и назначение обработчика событий
+//   btn.addEventListener('click', () => {
+//     modal.classList.add('show');
+//     modal.classList.remove('hide');
+
+//     document.body.style.overflow = 'hidden'; // не позволяет скролить страницу
+//   });
+// });
+
+// function closeModal() { // функция для закрытия окна и предотвращения повторения кода
+//   modal.classList.add('hide');
+//   modal.classList.remove('show');
+
+//   document.body.style.overflow = ''; // возвращает скролл
+// }
+
+// modalCloseBtn.addEventListener('click', closeModal);
+
+// modal.addEventListener('click', (e) => {
+//   if (e.target === modal) {
+//     closeModal();
+//   }
+// })
+
+// document.addEventListener('keydown', (e => {
+//   if (e.code === 'Escape' && modal.classList.contains('show')) {
+//     closeModal();
+//   }
+// }));
