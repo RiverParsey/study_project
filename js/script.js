@@ -2824,3 +2824,112 @@
 
 // console.log(ivan);
 // console.log(alex);
+
+
+
+// module1-task67 контекст вызова this
+
+
+// функции могут вызываться 4 методами, и в каждом контексти вызова отличается
+
+
+// 1 просто вызов функции
+
+// function showThis() {
+//   console.log(this);
+// }
+
+// showThis();
+
+// function showThis(a, b) {
+//   console.log(this);
+//   function sum() {
+//     console.log(this);
+//     return a + b;
+//   }
+
+//   console.log(sum());
+// }
+
+// showThis(4, 5);
+
+// обычная функция: this = window, но если use strict - undefined
+
+
+// 2 контекст у методов обьекта - сам обьект
+
+// const obj = {
+//   a: 20,
+//   b: 15,
+//   sum: function() {
+//     console.log(this);
+//   }
+// };
+
+// obj.sum();
+
+
+// 3 this в конструкторах и классах - это новый экземпляр обьекта
+
+// function User(name, id) {
+//   this.name = name;
+//   this.id = id;
+//   this.human = true;
+// }
+
+// let ivan = new User('ivan', 23);
+
+
+// 4 ручная привязка this: call, apply, bind
+
+// function sayName(surname) {
+//   console.log(this);
+//   console.log(this.name + surname);
+// }
+
+// const user = {
+//   name: 'john'
+// };
+
+// sayName.call(user, 'smith'); // передаем через запятую
+// sayName.apply(user, ['smith']); // передаем через запятую но в массиве
+
+// function count(num) {
+//   return this * num;
+// }
+
+// const double = count.bind(2);
+// console.log(double(3));
+
+
+// когда обработчик написан в классическом режиме, контекстом вызова будет обьект на котором произошло событие
+// в обработчике при использовании стрелочной функции контекст вызова this теряется
+
+
+// const btn = document.querySelector('button');
+
+// btn.addEventListener('click', function() {
+//   this.style.backgroundColor = 'red';
+// });
+
+
+// у стрелочной функции нет контекста вызова
+
+// const obj = {
+//   num: 5,
+//   sayNumber: function() {
+//     const say = () => {
+//       console.log(this);
+//     };
+
+//     say();
+//   }
+// };
+
+// obj.sayNumber();
+
+// const double = (a) => {
+//   return a * 2;
+// };
+
+// const double = (a) => a * 2; // return подставляется автоматически
