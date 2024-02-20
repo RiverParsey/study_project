@@ -2933,3 +2933,110 @@
 // };
 
 // const double = (a) => a * 2; // return подставляется автоматически
+
+
+
+// module1-task68 контекст вызова this
+
+// function showThis() {
+//   console.log(this);
+// }
+
+// showThis();
+
+// function showThis(a, b) {
+//   console.log(this);
+//   function sum() {
+//     console.log(this);
+//     return this.a + this.b;
+//   }
+
+//   console.log(sum());
+// }
+
+// showThis(4, 5);
+
+// 1) обычная функция: this === window, но если стоит use strict то будет undefined
+// даже если функция внутри функции контекст будет таким же
+
+
+// const obj = {
+//   a: 20,
+//   b: 15,
+//   sum: function() {
+//     console.log(this);
+//   }
+// }
+
+// obj.sum();
+
+// const obj = {
+//   a: 20,
+//   b: 15,
+//   sum: function() {
+//     function shout() {
+//       console.log(this); // это уже не метод обьекта это просто функция внутри теле функции которая и является методом
+//     }                    // результат также будет undefined
+
+//     shout();
+//   }
+// }
+
+// obj.sum();
+
+// 2) контекстом у методов обьекта является сам обьект
+
+
+// function User(name, id) { // функция конструктор, при вызове создаст новый обьект
+//   this.name = name;
+//   this.id = id;
+//   this.human = true;
+// }
+
+// let ivan = new User('Ivan', 23);
+
+// 3) this в функциях конструкторах и классах - это новый экземпляр обьекта
+
+
+// function sayName(surname) {
+//   console.log(this);
+//   console.log(this.name);
+// }
+
+// const user = {
+//   name: 'john',
+// }
+
+// sayName.call(user, 'smith'); // аргументы передаются через запятую в качестве строки
+// sayName.apply(user, ['smith']); // аргументы передаются через массив так же в качестве строки
+
+// function count(num) {
+//   return this * num;
+// }
+
+// const double = count.bind(2);
+// console.log(double(3));
+
+// 4) ручная привязка this, call, apply, bind
+
+
+
+// const btn = document.querySelector('button');
+
+// btn.addEventListener('click', function() { // контекстом будет элемент на котором произошло событие
+//   console.log(this); // обычная коллбэк функция внутри слушателя событий
+// });
+
+
+// const obj = {
+//   num: 5,
+//   sayNumber: function() { // а метод всегда ссылается на обьект в котором вызывается
+//     const say = () => { // у стрелочной функции нет контекста вызова, она всегда берет контекст у родителя, в данном случае метод sayNumber()
+//       console.log(this);
+//     }
+
+//     say();
+//   }
+// }
+
+// obj.sayNumber();
