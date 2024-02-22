@@ -3129,3 +3129,90 @@
 
 // const div = new MenuCard(); // стандартый вызов с созданием обьекта в переменной
 // div.render();
+
+
+
+// module1-task76 rest оператор и параметры по умолчанию
+
+
+// const log = function(a, b, ...rest) {
+//   console.log(a, b, rest);
+// }
+
+// log('basic', 'rest', 'operator', 'usage');
+
+// function calcOrDouble(number, basis) {
+//   console.log(number * basis);
+// }
+
+// calcOrDouble(3, 5); // 15
+
+// // что если не передан какой либо аргумент
+
+// function calcOrDouble(number, basis) { // не всегда надежно, может привести к ошибке
+//   basis = basis || 2;
+//   console.log(number * basis);
+// }
+
+// calcOrDouble(3);
+
+// // стандарт ES6
+
+// function calcOrDouble(number, basis = 2) { // параметр по умолчанию задается прямо в дужках
+//   console.log(number * basis);
+// }
+
+// calcOrDouble(3);
+
+
+
+// class MenuCard { // создание класса
+//   constructor(src, alt, title, descr, price, parentSelector, ...classes) { // вызов метода constructor и передача параметров
+//     this.src = src; // присвоений пераметров при будущем создании обьекта с помощю this
+//     this.alt = alt;
+//     this.title = title;
+//     this.descr = descr;
+//     this.price = price;
+//     this.classes = classes;
+//     this.parent = document.querySelector(parentSelector); // помещение родителя  в свойство parent 
+//     this.transfer = 27;
+//     this.changeToUah();
+//   }
+
+//   changeToUah() { // метод классы вычисляющий курс валют
+//     this.price = this.price * this.transfer;
+//   }
+
+//   render() { // метод классы создающий элемент div
+//     const element = document.createElement('div'); // создание элемента и присвоение в переменную
+//     if (this.classes.length === 0) {
+//       this.element = 'menu__item';
+//       element.classList.add(this.element);
+//     } else {
+//       this.classes.forEach(className => element.classList.add(className));
+//     }
+
+//     div.innerHTML = `
+//         <img src=${this.src} alt=${this.alt}>
+//         <h3 class="menu__item-subtitle">${this.title}</h3>
+//         <div class="menu__item-descr">${this.descr}</div>
+//         <div class="menu__item-divider"></div>
+//         <div class="menu__item-price">
+//             <div class="menu__item-cost">Цена:</div>
+//             <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+//         </div>
+//     `; // задание шаблона элемента с помощю интерполяции
+
+//     this.parent.append(element); // вызов метода append на родителе для добавления element в DOM структуру
+//   }
+// }
+
+// new MenuCard( // создание нового обьекта MenuCard
+//   "img/tabs/vegy.jpg", // присвоение значений для свойств this
+//   "vegy",
+//   "Меню 'Фитнес'",
+//   "Меню 'Фитнес' - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!",
+//   229,
+//   ".menu .container",
+//   "menu__item" 
+// ).render(); // вызов без сохранения в переменную
