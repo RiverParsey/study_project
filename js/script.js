@@ -3078,3 +3078,54 @@
 
 // console.log(square.calcArea());
 // console.log(long.calcArea());
+
+
+
+// module1-task70 используем классы в реальной работеа
+
+// class MenuCard { // создание класса
+//   constructor(src, alt, title, descr, price, parentSelector) { // вызов метода constructor и передача параметров
+//     this.src = src; // присвоений пераметров при будущем создании обьекта с помощю this
+//     this.alt = alt;
+//     this.title = title;
+//     this.descr = descr;
+//     this.price = price;
+//     this.parent = document.querySelector(parentSelector); // помещение родителя  в свойство parent 
+//     this.transfer = 27;
+//     this.changeToUah();
+//   }
+
+//   changeToUah() { // метод классы вычисляющий курс валют
+//     this.price = this.price * this.transfer;
+//   }
+
+//   render() { // метод классы создающий элемент div
+//     const element = document.createElement('div'); // создание элемента и присвоение в переменную
+//     div.innerHTML = `
+//       <div class="menu__item">
+//         <img src=${this.src} alt=${this.alt}>
+//         <h3 class="menu__item-subtitle">${this.title}</h3>
+//         <div class="menu__item-descr">${this.descr}</div>
+//         <div class="menu__item-divider"></div>
+//         <div class="menu__item-price">
+//             <div class="menu__item-cost">Цена:</div>
+//             <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+//         </div>
+//       </div>
+//     `; // задание шаблона элемента с помощю интерполяции
+
+//     this.parent.append(element); // вызов метода append на родителе для добавления element в DOM структуру
+//   }
+// }
+
+// new MenuCard( // создание нового обьекта MenuCard
+//   "img/tabs/vegy.jpg", // присвоение значений для свойств this
+//   "vegy",
+//   "Меню 'Фитнес'",
+//   "Меню 'Фитнес' - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!",
+//   229,
+//   ".menu .container", 
+// ).render(); // вызов без сохранения в переменную
+
+// const div = new MenuCard(); // стандартый вызов с созданием обьекта в переменной
+// div.render();
