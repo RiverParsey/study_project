@@ -3179,11 +3179,11 @@
 //     this.changeToUah();
 //   }
 
-//   changeToUah() { // метод классы вычисляющий курс валют
+//   changeToUah() { // метод класса вычисляющий курс валют
 //     this.price = this.price * this.transfer;
 //   }
 
-//   render() { // метод классы создающий элемент div
+//   render() { // метод класса создающий элемент div
 //     const element = document.createElement('div'); // создание элемента и присвоение в переменную
 //     if (this.classes.length === 0) {
 //       this.element = 'menu__item';
@@ -3216,3 +3216,50 @@
 //   ".menu .container",
 //   "menu__item" 
 // ).render(); // вызов без сохранения в переменную
+
+
+
+
+
+// module1-task72 ajax
+
+// калькулятор валют
+
+// const inputRub = document.querySelector('#rub'),
+//       inputUsd = document.querySelector('#usd');
+
+// inputRub.addEventListener('input', () => {
+//   const request = new XMLHttpRequest(); // переменная запрос(request) в которой создается обьект XMLHttpRequest
+
+//   // request.open(method, url, async, login, pass); // собирает настройки чтобы в будущем сделать запрос
+//   // request.setRequestHeader('Content-type', 'application/json; charset=utf-8') // http заголовок, нужен для передачи json файлов
+//   // request.send(body) // отправляет запрос, отличается в зависимости от метода указанного в open() 
+  
+//   request.open('GET', 'js/current.json',);
+//   request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+//   request.send();
+
+//   // свойства обьекта httpRequest
+
+//   // status содержит статус нашего запроса н 404 200 400
+//   // statusText текстовое описание от сервера н OK, Not found
+//   // response (ответ) от backand разработчика
+//   // readyState содержит текущее состояние запроса (1 - 4)
+
+//   // события обьекта
+
+//   request.addEventListener('readystatechange', () => { // событие отслеживает готовност запроса (1 - 4)
+//     if (request.readyState === 4 && request.status === 200) {
+//       console.log(request.response); // возвращает ответ json
+//       const data = JSON.parse(request.response); // парсим json файл в обычный обьект
+
+//       inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2);
+//     } else {
+//       inputUsd.value = 'что-то пошло не так';
+//     }
+//   });
+
+//   // request.addEventListener('load', () => { // второе событие, срабатывает когда запрос полностью готов
+
+//   // })
+// });
