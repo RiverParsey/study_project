@@ -3263,3 +3263,72 @@
 
 //   // })
 // });
+
+
+
+
+
+// module1-task73 реализация скрипта отправки данных на сервер
+
+// const forms = document.querySelector('form');  // получаем формы и присваиваем переменной
+
+// const message = {     // создаем переменную с ответами для пользователя
+//   loading: 'loading',
+//   success: 'success',
+//   failure: 'sorry, something wrong'
+// };
+
+// forms.forEach(item => { // вешаем на формы выполнение функции
+//   postData(item);
+// });
+
+// function postData(form) { // создаем функцию с параметром form
+//   form.addEventListener('submit', (e) => { // вешаем на форму обработчик событий и коллбэк с параметром event
+//     e.preventDefault(); // збрасываем обьект event
+
+//     const statusMessage = document.createElement('div'); // создаем элемент внутри переменной
+//     statusMessage.classList.add('status'); // присваиваем ей класс
+//     statusMessage.textContent = message.loading; // вставляем текст с обекта message
+//     form.append(statusMessage); // вставляем сообщение в форму
+
+//     const request = new XMLHttpRequest(); // обект httpRequest внутри переменной запрос
+//     request.open('POST', 'server.php'); // отправляем запрос методом POST
+
+
+//     // request.setRequestHeader('Content-type', 'multipart/form-data');
+//     // // заголовок говорит серверу что именно приходит
+//     // // при использовании httpRequest в связке с FormData заголовок не нужен, сервер сам определяет что ему нужно
+
+//     // // код ниже используется при передаче в формате json
+
+//     // request.setRequestHeader('Content-type', 'application/json'); // присваиваем заголовок
+//     // const formData = new FormData(form); // создаем новый бьект с параметром form
+
+//     // const object = {}; // создаем пустой обьект для данных
+//     // formData.forEach(function(value, key) { // вешаем перебой ключей для всех форм
+//     //   object[key] = value; // присваиваем результат перебора в пустой обьект
+//     // })
+
+//     // const json = JSON.stringify(object); // переводим обект в формат JSON
+
+//     // request.send(json); // отправляем запрос
+
+
+//     const formData = new FormData(form); // создаем обьект присваивая переменной
+    
+//     request.send(formData); // отправляем запрос
+
+//     request.addEventListener('load', () => { // вешаем обработчик с параметром load
+//       if (request.status === 200) { // условие если ответ 200 OK
+//         console.log(request.response); // выводим ответ в консоль
+//         statusMessage.textContent = message.success; // добавляем ответ пользователю
+//         form.reset(); // обнуляем форму
+//         setTimeout(() => { // запускаем таймер
+//           statusMessage.remove(); // удаляет ответ
+//         }, 2000) // через 2 секунды после появления
+//       } else { // если загрузка не удалась
+//         statusMessage.textContent = message.failure; // выводим сообщение об ошибке
+//       }
+//     });
+//   });
+// }
