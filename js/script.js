@@ -3465,3 +3465,91 @@
 // Promise.race([test(1000), test(2000)]).then(() => {
 //   console.log('All');
 // });
+
+
+
+
+// module1-task77   Fetch API
+
+const forms = document.querySelectorAll('form');
+const message = {   // создается переменная с ответами пользователю
+  loading: 'img/svg/spinner.svg',
+  success: 'success',
+  failure: 'oops, something wrong'
+};
+
+forms.forEach(item => {   // функция postData вешается на каждый элемент методом forEach
+  postData(item);
+});
+
+function postData(form) {   // создание функции postData с параметром form
+  form.addEventListener('submit', (e) => {    // вешаем обработчик события submit с обьектом события e
+    e.preventDefault(); // сбрасываем обычное поведение т.е. перезагрузку при отправке формы
+
+    let statusMessage = document.createElement('img');    // создаем элемент img в переменной statusMessage
+    statusMessage.src = message.loading;  // вешаем атрибуту svg крутилку с обьекта message
+    statusMessage.style.cssText = `
+      display: block;
+      margin: 0 auto;
+    `;    // добавляем стили для центрирования крутилки
+    form.insertAdjacentElement('afterend', statusMessage); // вставляем крутилку после формы методом insertAdjacentElement()
+
+    // const request = new XMLHttpRequest(); // создаем переменную с обьектом httpRequest
+    // request.open('POST', 'server.php'); // собираем ностройки для будущего запроса
+
+    const formData = new FormData(form);  // создаем обьект FormData в переменной formData
+
+    const object = {};
+    formData.forEach(function(value, key) {
+      object[key] = value;
+    });
+
+    fetch('server.php', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(object)
+    }).then(data => {
+      console.log(data);
+      showThanksModal(message.success);
+      statusMessage.remove();
+    }).catch(() => {
+      showThanksModal(message.failure);
+    }).finally(() => {
+      form.reset();
+    })
+    
+  });
+}
+
+function showThanksModal(message) {
+  const prevModalDialog = document.querySelector('.modal__dialog');
+
+  prevModalDialog.classList.add('hide');
+  openModal();
+
+  const thanksModal = document.createElement('div');
+  thanksModal.classList.add('modal__dialog');
+  thanksModal.innerHTML = `
+    <div class="modal__content>
+      <div class="modal__close" data-close>x</div>
+      <div class="modal__title">${message}</div>
+    </div>
+  `;
+
+  document.querySelector('.modal').append(thanksModal);
+  setTimeout(() => {
+    thanksModal.remove();
+    prevModalDialog.classList.add('show');
+    prevModalDialog.classList.remove('hide');
+    closeModal();
+  }, 4000);
+}
+
+//  API // набор данных и возможностей
+//  DOM API // методы которые позволяют работать со страницой
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
