@@ -3471,85 +3471,159 @@
 
 // module1-task77   Fetch API
 
-const forms = document.querySelectorAll('form');
-const message = {   // создается переменная с ответами пользователю
-  loading: 'img/svg/spinner.svg',
-  success: 'success',
-  failure: 'oops, something wrong'
-};
+// const forms = document.querySelectorAll('form');
+// const message = {   // создается переменная с ответами пользователю
+//   loading: 'img/svg/spinner.svg',
+//   success: 'success',
+//   failure: 'oops, something wrong'
+// };
 
-forms.forEach(item => {   // функция postData вешается на каждый элемент методом forEach
-  postData(item);
-});
+// forms.forEach(item => {   // функция postData вешается на каждый элемент методом forEach
+//   postData(item);
+// });
 
-function postData(form) {   // создание функции postData с параметром form
-  form.addEventListener('submit', (e) => {    // вешаем обработчик события submit с обьектом события e
-    e.preventDefault(); // сбрасываем обычное поведение т.е. перезагрузку при отправке формы
+// function postData(form) {   // создание функции postData с параметром form
+//   form.addEventListener('submit', (e) => {    // вешаем обработчик события submit с обьектом события e
+//     e.preventDefault(); // сбрасываем обычное поведение т.е. перезагрузку при отправке формы
 
-    let statusMessage = document.createElement('img');    // создаем элемент img в переменной statusMessage
-    statusMessage.src = message.loading;  // вешаем атрибуту svg крутилку с обьекта message
-    statusMessage.style.cssText = `
-      display: block;
-      margin: 0 auto;
-    `;    // добавляем стили для центрирования крутилки
-    form.insertAdjacentElement('afterend', statusMessage); // вставляем крутилку после формы методом insertAdjacentElement()
+//     let statusMessage = document.createElement('img');    // создаем элемент img в переменной statusMessage
+//     statusMessage.src = message.loading;  // вешаем атрибуту svg крутилку с обьекта message
+//     statusMessage.style.cssText = `
+//       display: block;
+//       margin: 0 auto;
+//     `;    // добавляем стили для центрирования крутилки
+//     form.insertAdjacentElement('afterend', statusMessage); // вставляем крутилку после формы методом insertAdjacentElement()
 
-    // const request = new XMLHttpRequest(); // создаем переменную с обьектом httpRequest
-    // request.open('POST', 'server.php'); // собираем ностройки для будущего запроса
+//     // const request = new XMLHttpRequest(); // создаем переменную с обьектом httpRequest
+//     // request.open('POST', 'server.php'); // собираем ностройки для будущего запроса
 
-    const formData = new FormData(form);  // создаем обьект FormData в переменной formData
+//     const formData = new FormData(form);  // создаем обьект FormData в переменной formData
 
-    const object = {};
-    formData.forEach(function(value, key) {
-      object[key] = value;
-    });
+//     const object = {};
+//     formData.forEach(function(value, key) {
+//       object[key] = value;
+//     });
 
-    fetch('server.php', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(object)
-    }).then(data => {
-      console.log(data);
-      showThanksModal(message.success);
-      statusMessage.remove();
-    }).catch(() => {
-      showThanksModal(message.failure);
-    }).finally(() => {
-      form.reset();
-    })
+//     fetch('server.php', {
+//       method: 'POST',
+//       headers: {
+//         'Content-type': 'application/json'
+//       },
+//       body: JSON.stringify(object)
+//     }).then(data => {
+//       console.log(data);
+//       showThanksModal(message.success);
+//       statusMessage.remove();
+//     }).catch(() => {
+//       showThanksModal(message.failure);
+//     }).finally(() => {
+//       form.reset();
+//     })
     
-  });
-}
+//   });
+// }
 
-function showThanksModal(message) {
-  const prevModalDialog = document.querySelector('.modal__dialog');
+// function showThanksModal(message) {
+//   const prevModalDialog = document.querySelector('.modal__dialog');
 
-  prevModalDialog.classList.add('hide');
-  openModal();
+//   prevModalDialog.classList.add('hide');
+//   openModal();
 
-  const thanksModal = document.createElement('div');
-  thanksModal.classList.add('modal__dialog');
-  thanksModal.innerHTML = `
-    <div class="modal__content>
-      <div class="modal__close" data-close>x</div>
-      <div class="modal__title">${message}</div>
-    </div>
-  `;
+//   const thanksModal = document.createElement('div');
+//   thanksModal.classList.add('modal__dialog');
+//   thanksModal.innerHTML = `
+//     <div class="modal__content>
+//       <div class="modal__close" data-close>x</div>
+//       <div class="modal__title">${message}</div>
+//     </div>
+//   `;
 
-  document.querySelector('.modal').append(thanksModal);
-  setTimeout(() => {
-    thanksModal.remove();
-    prevModalDialog.classList.add('show');
-    prevModalDialog.classList.remove('hide');
-    closeModal();
-  }, 4000);
-}
+//   document.querySelector('.modal').append(thanksModal);
+//   setTimeout(() => {
+//     thanksModal.remove();
+//     prevModalDialog.classList.add('show');
+//     prevModalDialog.classList.remove('hide');
+//     closeModal();
+//   }, 4000);
+// }
 
-//  API // набор данных и возможностей
-//  DOM API // методы которые позволяют работать со страницой
+// //  API // набор данных и возможностей
+// //  DOM API // методы которые позволяют работать со страницой
 
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => response.json())
-  .then(json => console.log(json))
+// fetch('https://jsonplaceholder.typicode.com/todos/1')
+//   .then(response => response.json())
+//   .then(json => console.log(json))
+
+
+
+
+// module1-task78  методы перебора массивов
+
+
+// filter
+
+// const names = ['Ivan', 'Ann', 'Ksenia', 'Vsevolod'];
+
+// const shortNames = names.filter((name) => {   // создает новый массив методом filter()
+//   return name.length < 5;
+// });
+
+// console.log(shortNames);
+
+
+// // map
+
+// const answers = ['IvAn', 'AnnA', 'HellO'];
+
+// const result = answers.map(item => item.toLowerCase()); // создает новый массив методом map()
+
+// console.log(result);
+
+
+// // every/some
+
+// // some если хотя бы 1 элемент в переборе подходит по условию вернет true
+
+// const some = [4, 'ahe', 'sauev'];
+
+// console.log(some.some(item => typeof(item) === 'number'));
+
+
+// // every каждые элемент должет подходить условию
+
+// const every = [5, 19, 83];
+
+// console.log(every.every(item => typeof(item) === 'number'));
+
+
+// // reduce
+
+// // const arr = [4, 5, 1, 3, 2, 6];      // numbers
+// //                     //   0      4
+// //                     //   4      5
+// //                     //   9      1
+// //                     //   10     3
+// // const res = arr.reduce((sum, current) => sum + current) //  можно 3 аргументом добавить начальное значение, н.п  3
+
+// // console.log(res);
+
+
+// const arr = ['apple', 'pear', 'plum'];      // strings
+
+// const res = arr.reduce((sum, current) => `${sum}, ${current}`);
+
+// console.log(res);
+
+
+// const obj = {
+//   ivan: 'persone',
+//   ann: 'persone',
+//   dog: 'animal',
+//   cat: 'animal'
+// };
+
+// const newArr = Object.entries(obj)
+// .filter(item => item[1] === 'persone')
+// .map(item => item[0]);
+
+// console.log(newArr);
