@@ -3627,3 +3627,66 @@
 // .map(item => item[0]);
 
 // console.log(newArr);
+
+
+
+
+
+// filter 
+
+// const names = ['Ivan', 'Ann', 'Ksenia', 'Voldemar'];
+
+// const shortNames = names.filter((name) => {
+//   return name.length < 5;
+// })
+
+// console.log(shortNames);
+
+
+// // map
+
+// const answers = ['IvAn', 'AnnA', 'HellO'];
+
+// // const result = answers.map(item => item.toLowerCase());
+
+// console.log(result);
+
+
+// // every / some
+
+// const some = [4, 'qwf', 'sdbufs'];
+
+// // console.log(some.some(item => typeof(item) === 'number'));  true
+// // console.log(some.every(item => typeof(item) === 'number'));  false
+
+
+
+// // reduce 
+
+// // схлоповает массив в одно целое
+
+// const arr = [4, 5, 1, 3, 2, 6];
+//                     //  0      4
+//                   //    4      5
+// const res = arr.reduce((sum, current) => sum + current);
+// console.log(res);
+
+
+// // работает и со строками
+
+// const newArr = ['apple', 'pear', 'plum'];
+//                               // третим аргуметом в reduce можно повесть значение по умолчанию
+// const result = newArr.reduce((sum, current) => `${sum}, ${current}`); 
+// console.log(result);
+
+
+
+
+
+// module1-task79 Подробно про npm и проект. JSON-server
+
+
+// npm init
+// answer the questions
+// is this OK?
+// появляется package.json
