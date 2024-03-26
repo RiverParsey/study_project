@@ -3690,3 +3690,8 @@
 // answer the questions
 // is this OK?
 // появляется package.json
+
+
+
+
+// module1-task80 получение данных с сервера async/await
