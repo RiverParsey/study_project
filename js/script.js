@@ -3695,3 +3695,27 @@
 
 
 // module1-task80 получение данных с сервера async/await
+
+
+
+
+// module1-task81 Дополнительно: Что такое библиотеки. Библиотека axios
+
+// библиотека это готовый ресурс для решения проблем
+
+// getResource('http://localhost:3000/menu')
+    //     .then(data => {
+            // data.forEach(({img, altimg, title, descr, price}) => {
+            //     new MenuCard(img, altimg, title, descr, price, ".menu .container").render();
+            // });
+    //     });
+
+
+// axios.get('http://localhost:3000/menu')
+//         .then(data => {
+//             data.data.forEach(({img, altimg, title, descr, price}) => {
+//                 new MenuCard(img, altimg, title, descr, price, ".menu .container").render();
+//             });
+//         });
+
+// ці два шматки кода роблять те саме, тільки в одному через метод getResource а другий через бібліотеку axios
