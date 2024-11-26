@@ -4065,3 +4065,4 @@
 
 
 // working and memmory test
+// fuck chto nibud zaporol pohodu
