@@ -4072,3 +4072,26 @@
 
 // module1-task87
 // we need second test
+
+
+
+
+// module1-task88 deep copy of obj, because you stupid as fuck dont study for a half year, congratulations
+
+const person = {
+  name: 'Alex',
+  tel: '+7555877',
+  parents : {
+    mom: 'Olga',
+    dad: 'Mike'
+  }
+};
+
+// console.log(JSON.stringify(person)); // method stringigy tranform simple obj to JSON obj, all JSON keys and values need to be wroten in double quotes
+
+// console.log(JSON.parse(JSON.stringify(person))); // method parse tranform JSON obj to simple obj, keys and values will be in simple quotes
+
+const clone = JSON.parse(JSON.stringify(person)); // make a deep independent copy of any JS obj
+clone.parents.mom = "Ann";
+console.log(person); // mom will be Olga
+console.log(clone); // mom will be Ann
