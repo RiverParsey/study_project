@@ -4101,28 +4101,186 @@
 
 // module1-task89 AJAX and talk with the server
 
-const inputRub = document.querySelector('#rub'),
-      inputUsd = document.querySelector('#usd');
+// const inputRub = document.querySelector('#rub'),
+//       inputUsd = document.querySelector('#usd');
 
-inputRub.addEventListener('input', () =>  {
-  const request = new XMLHttpRequest();
+// inputRub.addEventListener('input', () =>  {
+//   const request = new XMLHttpRequest();
 
-  request.open('GET', 'js/current.json'); // method, url, async, login, pass
-  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-  request.send() // body
+//   request.open('GET', 'js/current.json'); // method, url, async, login, pass
+//   request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+//   request.send() // body
 
-  request.addEventListener('readystatechange', () => {
-    if (request.readyState === 4 && request.status === 200) {
-      const data = JSON.parse(request.response);
-      inputUsd.value = (+inputRub.value / data.current.usd).toFixed();
-    } else {
-      inputUsd.value = 'something went wrong'
-    }
+//   request.addEventListener('readystatechange', () => {
+//     if (request.readyState === 4 && request.status === 200) {
+//       const data = JSON.parse(request.response);
+//       inputUsd.value = (+inputRub.value / data.current.usd).toFixed();
+//     } else {
+//       inputUsd.value = 'something went wrong'
+//     }
+//   });
+
+//   // status  статус запроса
+//   // statusText текст запроса
+//   // response ответ сервера
+//   // readyState текущее состояние запроса
+
+// });
+
+
+
+
+// module1-task90 realisation of send data to server script
+
+window.addEventListener('DOMContentLoaded', function() {
+
+  // Tabs
+  
+let tabs = document.querySelectorAll('.tabheader__item'),
+  tabsContent = document.querySelectorAll('.tabcontent'),
+  tabsParent = document.querySelector('.tabheader__items');
+
+function hideTabContent() {
+      
+      tabsContent.forEach(item => {
+          item.classList.add('hide');
+          item.classList.remove('show', 'fade');
+      });
+
+      tabs.forEach(item => {
+          item.classList.remove('tabheader__item_active');
+      });
+}
+
+function showTabContent(i = 0) {
+      tabsContent[i].classList.add('show', 'fade');
+      tabsContent[i].classList.remove('hide');
+      tabs[i].classList.add('tabheader__item_active');
+  }
+  
+  hideTabContent();
+  showTabContent();
+
+tabsParent.addEventListener('click', function(event) {
+  const target = event.target;
+  if(target && target.classList.contains('tabheader__item')) {
+          tabs.forEach((item, i) => {
+              if (target == item) {
+                  hideTabContent();
+                  showTabContent(i);
+              }
+          });
+  }
+  });
+  
+  // Timer
+
+  
+
+  // Modal
+
+  const modalTrigger = document.querySelectorAll('[data-modal]'),
+      modal = document.querySelector('.modal'),
+      modalCloseBtn = document.querySelector('[data-close]');
+
+  modalTrigger.forEach(btn => {
+      btn.addEventListener('click', openModal);
   });
 
-  // status  статус запроса
-  // statusText текст запроса
-  // response ответ сервера
-  // readyState текущее состояние запроса
+  function closeModal() {
+      modal.classList.add('hide');
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+  }
 
+  function openModal() {
+      modal.classList.add('show');
+      modal.classList.remove('hide');
+      document.body.style.overflow = 'hidden';
+      clearInterval(modalTimerId);
+  }
+  
+  modalCloseBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+          closeModal();
+      }
+  });
+
+  document.addEventListener('keydown', (e) => {
+      if (e.code === "Escape" && modal.classList.contains('show')) { 
+          closeModal();
+      }
+  });
+
+  const modalTimerId = setTimeout(openModal, 300000);
+  // Изменил значение, чтобы не отвлекало
+
+  function showModalByScroll() {
+      if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+          openModal();
+          window.removeEventListener('scroll', showModalByScroll);
+      }
+  }
+  window.addEventListener('scroll', showModalByScroll);
+
+  // Используем классы для создание карточек меню
+
+  
+
+
+
+  // Forms
+
+  const forms = document.querySelectorAll('form');
+
+  const message = {
+    loading: 'loading',
+    success: 'thanks',
+    failure: 'something went wrong..'
+  }
+
+  forms.forEach(item => {
+    postData(item);
+  });
+
+  function postData(form) {
+    form.addEventListener('submit', () => {
+      e.preventDefault();
+
+      const statusMessage = document.createElement('div');
+      statusMessage.classList.add('status');
+      statusMessage.textContent = message.loading;
+      form.append(statusMessage);
+
+      const request = new XMLHttpRequest();  // при использовании FormData и HttpRequest заголовок устанавливается автоматически
+      request.open('POST', 'server.php');
+
+      request.setRequestHeader('Content-type', 'application/json');
+      const formData = new FormData(form);
+
+      const object = {};
+      formData.forEach(function(value, key){
+        object[key] = value;
+      });
+
+      const json = JSON.stringify(object);
+
+      request.send(json);
+
+      request.addEventListener('load', () => {
+        if (request.status === 200) {
+          console.log(request.response);
+          statusMessage.textContent = message.success;
+          form.reset();
+          setTimeout(() => {
+            statusMessage.remove();
+          }, 2000);
+        } else {
+          statusMessage.textContent = message.failure;
+        }
+      })
+    });
+  }
 });
