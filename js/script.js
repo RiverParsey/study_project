@@ -4078,20 +4078,51 @@
 
 // module1-task88 deep copy of obj, because you stupid as fuck dont study for a half year, congratulations
 
-const person = {
-  name: 'Alex',
-  tel: '+7555877',
-  parents : {
-    mom: 'Olga',
-    dad: 'Mike'
-  }
-};
+// const person = {
+//   name: 'Alex',
+//   tel: '+7555877',
+//   parents : {
+//     mom: 'Olga',
+//     dad: 'Mike'
+//   }
+// };
 
-// console.log(JSON.stringify(person)); // method stringigy tranform simple obj to JSON obj, all JSON keys and values need to be wroten in double quotes
+// // console.log(JSON.stringify(person)); // method stringigy tranform simple obj to JSON obj, all JSON keys and values need to be wroten in double quotes
 
-// console.log(JSON.parse(JSON.stringify(person))); // method parse tranform JSON obj to simple obj, keys and values will be in simple quotes
+// // console.log(JSON.parse(JSON.stringify(person))); // method parse tranform JSON obj to simple obj, keys and values will be in simple quotes
 
-const clone = JSON.parse(JSON.stringify(person)); // make a deep independent copy of any JS obj
-clone.parents.mom = "Ann";
-console.log(person); // mom will be Olga
-console.log(clone); // mom will be Ann
+// const clone = JSON.parse(JSON.stringify(person)); // make a deep independent copy of any JS obj
+// clone.parents.mom = "Ann";
+// console.log(person); // mom will be Olga
+// console.log(clone); // mom will be Ann
+
+
+
+
+// module1-task89 AJAX and talk with the server
+
+const inputRub = document.querySelector('#rub'),
+      inputUsd = document.querySelector('#usd');
+
+inputRub.addEventListener('input', () =>  {
+  const request = new XMLHttpRequest();
+
+  request.open('GET', 'js/current.json'); // method, url, async, login, pass
+  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  request.send() // body
+
+  request.addEventListener('readystatechange', () => {
+    if (request.readyState === 4 && request.status === 200) {
+      const data = JSON.parse(request.response);
+      inputUsd.value = (+inputRub.value / data.current.usd).toFixed();
+    } else {
+      inputUsd.value = 'something went wrong'
+    }
+  });
+
+  // status  статус запроса
+  // statusText текст запроса
+  // response ответ сервера
+  // readyState текущее состояние запроса
+
+});
