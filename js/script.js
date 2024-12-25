@@ -4363,3 +4363,86 @@
 
 
 // module1-task92 Rest operator ES6
+
+// оператор ...rest возвращает массив неиспользованных параметров
+
+// const log = function(a, b, ...rest) { // записывается всегда последним начинается с трех точек
+//   console.log(a, b, rest);
+// }
+
+// log('basic', 'rest', 'operator', 'usage');
+
+// function calcOrDouble(number, basis) {
+//  console.log(number * basis);
+// }
+
+// calcOrDouble(3, 5); // если не указать второй аргумент будет ошибка
+
+// function calcOrDouble(number, basis) {
+//   basis = basis || 2;
+//   console.log(number * basis);
+//  }
+ 
+//  calcOrDouble(3); // решение до стандарта ES6, при ложном basis подставляется первая правда то есть 2
+
+// function calcOrDouble(number, basis = 2) {
+//   console.log(number * basis);
+//  }
+ 
+//  calcOrDouble(3, 5); // со стандарта ES6 можно задать параметр по умолчанию прямо в строке с параметрами
+
+
+
+// module1-task93 ClassList и делегирование событий
+
+// const btns = document.querySelectorAll('button');
+
+// console.log(btns[0].classList.item(0)); // метод позволяет добыть класс по порядку
+// console.log(btns[0].classList.add('red')); // метод позволяет довавить класс, можно и больше через запятую
+// console.log(btns[0].classList.remove('blue')); // метод позволяет удалить класс
+// console.log(btns[0].classList.toggle('blue')); // метод позволяет тогглить классы, если он есть удалить если его нет то добавить
+
+// if (btns[1].classList.contains('red')) { // метод проверяет на наличие класса
+//   console.log('red');
+// }
+
+// btns[0].addEventListener('click', () => {
+
+//   // if (!btns[1].classList.contains('red')) {
+//   //   btns[1].classList.add('red');
+//   // } else {
+//   //   btns[1].classList.remove('red');
+//   // }
+
+//   btns[1].classList.toggle('red');
+// });
+
+// console.log(btns[0].className); // свойство устарело, не рекомендовано к использованию
+
+
+// делегирование событий
+
+// const btns = document.querySelectorAll('button'),
+//       wrapper = document.querySelector('.btn-block');
+
+// wrapper.addEventListener('click', (event) => {
+//   if (event.target && event.target.tagName === "BUTTON") { // делегирование событий через родителя
+//     console.log('hello');
+//   }
+// });
+
+// wrapper.addEventListener('click', (event) => {
+//   if (event.target && event.target.matches("button.red")) { // делегирование событий через родителя, но с проверкой условия через метод matches
+//     console.log('hello');
+//   }
+// });
+
+// btns.forEach(btn => {
+//   btn.addEventListener('click', () => { // по сути то же самое но через перебор, не делегирование событий
+//     console.log('hello');
+//   });
+// })
+
+// const btn = document.createElement('button');
+// btn.classList.add('red');
+// wrapper.append(btn);
