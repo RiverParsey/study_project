@@ -4446,3 +4446,49 @@
 // const btn = document.createElement('button');
 // btn.classList.add('red');
 // wrapper.append(btn);
+
+
+
+// module1-task94 make Tabs in the new project
+
+// window.addEventListener('DOMContentLoaded', () => { // глобальный обработчик событий поставленный на обьект window
+
+//   const tabs = document.querySelectorAll('.tabheader__item'), // переменная для самих табов на которые будет кликать пользователь
+//         tabsContent = document.querySelectorAll('.tabcontent'), // переменная для контента/табов
+//         tabsParent = document.querySelector('.tabheader__item'); // переменная для родитела чтобы управлять потомками через делегирование событий
+  
+//   function hideTabContent() { // функция для скритыя лишних табов
+//     tabsContent.forEach(item => { // перебор превдомассива табов через forEach
+//       item.style.display = 'none'; // скрываем стили через inline стили
+//     });
+    
+//     tabs.forEach(item => { // внутри функции удаляеми у всех табов класс active
+//       // item.classList.add('hide'); // те же решения только через добавление классов а не через inline стили
+//       // item.classList.remove('show', 'fade'); // также удаляем класс для анимации
+//       item.classList.remove('tabheader__item-active'); // с помощью метода remove
+//     });
+//   }
+
+//   function showTabContent(i = 0) { // функция для показа таба с аргументом i/номером по порядку
+//     // tabsContent[i].classList.add('show', 'fade'); // также добавляем класс для анимации
+//     // tabsContent[i].classList.remove('hide'); // то же самое только через добавление классов к элементу а не через inline стили
+//     tabsContent[i].style.display = 'block'; // показываем таб с помощью display block
+//     tabs[i].classList.add('tabheader__item-active'); // добавляем класс active с помощью add
+//   }
+
+//   hideTabContent(); // вызов функции для скрытия всех табов
+//   showTabContent(); // вызов функции для показа первого таба с параметром 0, или с параметром по умолчания указанным внутри самой функции
+
+//   tabsParent.addEventListener('click', (event) => { // повесили обработчик события на родителя с аргументом обьекта события event
+//     const target = event.target; // создаем переменную для event.target для упрощения себе же, не нужно писать каждый раз event.target
+
+//     if (target && target.classList.contains('tabheader__item')) { // условие для проверки клика по tabheader__item
+//       tabs.forEach((item, i) => { // перебор для псевдомассива с целью определить куда кликнул пользователь, аргумент item и i это элемент на который кликнул пользователь и его номер по порядку
+//         if (target == item) { // условие для проверки совпадения обьекта события и элемента на который кликнул пользователь 
+//           hideTabContent(); // вызов функции для скрытия всех табов
+//           showTabContent(i); // вызов функции для показа таба на который кликнул пользователь с параметром i/номер по порядку
+//         }
+//       });
+//     }
+//   });
+// });
