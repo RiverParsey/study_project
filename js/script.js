@@ -4455,7 +4455,7 @@
 
 //   const tabs = document.querySelectorAll('.tabheader__item'), // переменная для самих табов на которые будет кликать пользователь
 //         tabsContent = document.querySelectorAll('.tabcontent'), // переменная для контента/табов
-//         tabsParent = document.querySelector('.tabheader__item'); // переменная для родитела чтобы управлять потомками через делегирование событий
+//         tabsParent = document.querySelector('.tabheader__item'); // переменная для родителя чтобы управлять потомками через делегирование событий
   
 //   function hideTabContent() { // функция для скритыя лишних табов
 //     tabsContent.forEach(item => { // перебор превдомассива табов через forEach
@@ -4492,3 +4492,94 @@
 //     }
 //   });
 // });
+
+
+
+
+// module1-task95 setTimeout and setInterval
+
+// const timerId = setTimeout(function(text) { // создаем переменную, принимает ту функцию которая должна будет сработать через определенный промежуток времени
+//   console.log(text);
+// }, 2000, 'Hello'); // второй аргумент устанавливает время задержки выполнения функции в миллисекундах и передает параметр аргумента указанного выше 
+
+
+// const timerId = setTimeout(logger, 2000); // второй вариант это передача уже существующей функции как аргумент без вызова самой функции
+
+// clearInterval(timerId); // очищает/останавливает интервал после вызова
+
+// function logger() { // передаем в setTimeout с задержкой в 2000 миллисекунд
+//   console.log('text')
+// }
+
+
+// const btn = document.querySelector('.btn');
+
+// btn.addEventListener('click', () => {
+//   const timerId = setTimeout(logger, 2000); // переменная timerId создается локально, код вне обработчика за нее не вкурсе
+// });
+
+
+// btn.addEventListener('click', () => {
+//   const timerId = setInterval(logger, 2000); // setInterval устанавливает интервал к выполнению через каждый указанный промежуток времени
+// });
+
+// clearInterval(timerId); // не сработает так как будет работать с undefined, рабочий пример ниже
+
+// для использования переменных внутри обработчиков нужно создать глобальную переменную timerId
+
+// const btn = document.querySelector('.btn');
+// let timerId,
+//     i = 0;
+
+// btn.addEventListener('click', () => {
+//   timerId = setInterval(logger, 2000);
+// });
+
+// function logger() {
+//   if (i === 3) { // условие проверяет исполнение интервала в данном количестве
+//     clearInterval(timerId);
+//   }
+//   console.log('text');
+//   i++; // после каждого исполнения увеличивает i на единичку, как только дойдет до 4 интервал остановится
+// }
+
+
+// let id = setTimeout(function log() { // рекурсивный таймер, то есть таймер в таймере
+//   console.log('Hello');
+//   id = setTimeout(log, 500);
+// }, 500);
+
+
+
+
+// const btn = document.querySelector('.btn'); // находим элемент на странице
+// let timerId, // создается для сохранения идентификатора таймера(нужно чтобы остановить анимацию)
+//     i = 0;
+
+// function myAnimation() { // сама анимация
+//   const elem = document.querySelector('.box'); // находим элемент с классом box который и будем анимировать
+//   let pos = 0; // переменная pos отслеживает позицию элемента которая будет менятся в ходе анимации
+
+//   const id = setInterval(frame, 10); // запуск таймера setInterval, который будет запускать функцию frame каждые 10 миллисекунд
+//   function frame() { // функция frame/сама анимация
+//     if (pos == 300) { // проверка условием, когда pos достигнет значения 300 таймер остановится с помощью clearInterval(id) 
+//       clearInterval(id);
+//     } else {
+//       pos++; // каждый раз при вызове frame, pos увеличивается на одиницу, то есть pos++
+//       elem.style.top = pos + "px"; // элемент смещается вниз изменением значения top
+//       elem.style.left = pos + "px"; // элемент смещается вправо изменением значения left
+//     }
+//   }
+// }
+
+// btn.addEventListener('click', myAnimation); // создает обработчик на кнопке btn, когда пользователь нажимает на нее происходит вызов функции myAnimation
+
+// суть кода
+// пользователь клацает на кнопку с классом btn
+// запускается функция myAnimation
+// в этой функции:
+  // выбирается элемент с классом box
+  // стартует анимация с помощью setInterval, которая:
+    // увеличивает значение pos
+    // смещает єлемент box на новую позицию изменением значений свойств top и left
+  // когда элемент достигает позиции 300px по top и left, таймер останавливается
