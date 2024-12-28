@@ -4583,3 +4583,85 @@
     // увеличивает значение pos
     // смещает єлемент box на новую позицию изменением значений свойств top и left
   // когда элемент достигает позиции 300px по top и left, таймер останавливается
+
+
+
+
+
+
+// module1-task96 сборщик мусора и утечки памяти
+
+// первый случай
+// если не стоит "use strict" то создается лишняя глобальная переменная даже без обявления
+
+// function func() {
+//   smth = 'string';
+// }  // в движке такой будет выглядеть как window.smth = 'string' / то есть создастся глобальная переменная
+// // такая переменная не может быть удалена сборщиком мусора
+
+
+// //второй случай / забытые таймеры, хранят ссылки на обьект работы
+
+// const someRes = getData();
+// const node = document.querySelector('class'); // даже если удалить оба обьевления ссылка останется
+
+// setInterval(function() { // внутри интервала остается ссылка и на данные и на ноду
+//   if (node) {
+//     node.innerHTML = someRes;
+//   }
+// }, 1000)
+
+
+// // третий случай / обработчики событий на не существующих элементах
+// // раньше приводило в утечкам памяти / современные сборщики будут удалять обработчики если элемент удален
+
+
+// // четвертый случай / замыкания
+
+// function outer() {
+//   const potentiallyHugeArray = [];
+//   return function inner() {
+//     potentiallyHugeArray.push('Hello');
+//     console.log('Hello!!');
+//   }
+// }
+
+// const sayHello = outer();
+
+
+// // пятый случай / ссылки на Дом элементы
+
+// // function createElement() {
+// //   const div = document.createElement('div');
+// //   div.id = 'test';
+// //   return div;
+// // }
+
+// // const testDiv = createElement();
+
+// // document.body.append(testDiv);
+
+// // function deleteElement() {
+// //   document.body.removeChild(document.getElementById('test'));
+// // }
+
+// // deleteElement();
+
+// // deleteElement ориентируется на Дом, удаляет просто из Дом дерева, в JS переменная остается
+
+
+// function createElement() { // после завершения работы функции переменные будут удалены
+//   const div = document.createElement('div');
+//   div.id = 'test';
+//   document.body.append(testDiv);
+// }
+
+// createElement();
+
+// function deleteElement() {
+//   document.body.removeChild(document.getElementById('test'));
+// }
+
+// deleteElement();
+
+// правильное решение
