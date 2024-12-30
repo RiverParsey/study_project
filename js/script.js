@@ -4687,7 +4687,6 @@
 // console.log(map.keys()); // та же ситуация, обьект сохранится в памяти
 
 // в WeakMap ключами могут быть только обьекты, если нет ссылки на обьект и он существует только внутри WeakMap то он может быть удален
-
 // let user = {
 //   name: 'Ivan'
 // };
@@ -4738,3 +4737,49 @@
 
 // messages.shift();
 // console.log(readMessages.has(messages[0]));
+
+
+
+
+
+// module1-task98 работа с датами
+
+// const now = new Date('2024-12-30'); // можно передавать аргументы, числа до 10-го передаются без нуля
+
+// console.log(now);
+
+// const now = new Data();
+
+// получение компонентов даты
+
+// console.log(now.getFullYear()); // вывод 2024
+
+// console.log(now.getMonth()); // вывод 12
+
+// console.log(now.getDate()); // вывод 30
+
+// console.log(now.getDay()); // вывод 1 начинается с воскресенья
+
+// console.log(now.getTimezoneOffset()); // разница между часовым поясом и UTC
+
+// getHours(), getSeconds(), getMilliseconds()
+
+// методы геттеры/получатели
+
+
+// console.log(now.setHours(18)); // установка времени
+
+// почти все работают так же просто вместо get пишем set
+
+// методы постеры/отправители
+
+
+// let start = new Data();
+
+// for (let i = 0; i < 100000; i++) {
+//   let some = i ** 3;
+// }
+
+// let end = new Date();
+
+// alert(`цикл отработал за ${end - start} миллисекунд`);
