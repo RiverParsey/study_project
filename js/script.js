@@ -4788,54 +4788,109 @@
 
 // module1-task99 создаем таймер обратного отсчета на сайте
 
-const deadline =  '2020-05-11';
+// const deadline =  '2020-05-11'; // переменная хранит строку с датой до которой будет отсчитываться время
 
-function getTimeRemaining(endtime) {
-  const t = Date.parse(endtime) - Date.parse(new Date()),
-        days = Math.floor(t / (1000 * 60 * 60 * 24)),
-        hours = Math.floor((t / (1000 * 60 * 60) % 24)),
-        minutes = Math.floor((t / 1000 / 60) % 60),
-        seconds = Math.floor((t / 1000) % 60);
+// function getTimeRemaining(endtime) { // функция для вычисления разницы между текущим времеменем и переданной конечной датой (endtime)
+//   const t = Date.parse(endtime) - Date.parse(new Date()), // преобразует строку с конечной датой и текущую дату в миллисекунды записывая в t
+//         days = Math.floor(t / (1000 * 60 * 60 * 24)), // делим общее количество миллисекунд на количество миллисекунд в одном дне 24 часа
+//         hours = Math.floor((t / (1000 * 60 * 60) % 24)), // берем остаток от общего количества часов чтобы получить оставшиеся часы в текущем дне
+//         minutes = Math.floor((t / 1000 / 60) % 60), // получаем оставшиеся минуты в текущем часе
+//         seconds = Math.floor((t / 1000) % 60); // получаем оставшиеся секунды в текущей минуте
 
-  return {
-    'total' : t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
+//   return { // возвращает обьект с рассчитаными значениями
+//     'total' : t,
+//     'days': days,
+//     'hours': hours,
+//     'minutes': minutes,
+//     'seconds': seconds
+//   };
+// }
 
-function getZero(num) {
-  if (num >= 0 && num < 10) {
-    return `0${num}`;
-  } else {
-    return num;
-  }
-}
+// function getZero(num) { // функция для добавления нуля к числам
+//   if (num >= 0 && num < 10) {
+//     return `0${num}`;
+//   } else {
+//     return num;
+//   }
+// }
 
-function setClock(selector, endtime) {
-  const timer = document.querySelector(selector),
-        days = timer.querySelector('#days'),
-        hours = timer.querySelector('#hours'),
-        minutes = timer.querySelector('#minutes'),
-        seconds = timer.querySelector('#seconds'),
-        timeInterval = setInterval(updateClock, 1000);
+// function setClock(selector, endtime) { // функция для установки таймера
+//   const timer = document.querySelector(selector), // ищет элемент на странице по указанному селектору
+//         days = timer.querySelector('#days'), // поиск отдельных частей таймера
+//         hours = timer.querySelector('#hours'), // поиск отдельных частей таймера
+//         minutes = timer.querySelector('#minutes'), // поиск отдельных частей таймера
+//         seconds = timer.querySelector('#seconds'), // поиск отдельных частей таймера
+//         timeInterval = setInterval(updateClock, 1000); // устанавливает выполнение таймера updateClock каждые 1000 миллисекунд
 
-  updateClock();
+//   updateClock(); // начальное обновление для мгновенного отображения таймера
   
-  function updateClock() {
-    const t = getTimeRemaining(endtime);
+//   function updateClock() { // обновление таймера
+//     const t = getTimeRemaining(endtime); // вызывает getTimeRemaining для вычисления оставшегося времени, результат сохраняет в t
 
-    days.innerHTML = getZero(t.days);
-    hours.innerHTML = getZero(t.hours);
-    minutes.innerHTML = getZero(t.minutes);
-    seconds.innerHTML = getZero(t.seconds);
+//     days.innerHTML = getZero(t.days); // вставляет рассчитанные значения в соответсвующие элементы на странице, использует getZero для добавления 0
+//     hours.innerHTML = getZero(t.hours); // вставляет рассчитанные значения в соответсвующие элементы на странице, использует getZero для добавления 0
+//     minutes.innerHTML = getZero(t.minutes); // вставляет рассчитанные значения в соответсвующие элементы на странице, использует getZero для добавления 0
+//     seconds.innerHTML = getZero(t.seconds); // вставляет рассчитанные значения в соответсвующие элементы на странице, использует getZero для добавления 0
 
-    if (t.total <= 0) {
-      clearInterval(timeInterval);
-    }
-  }
-}
+//     if (t.total <= 0) { // если общее время t.total меньше или равно 0 таймер останавливается с помощью clearInterval
+//       clearInterval(timeInterval);
+//     }
+//   }
+// }
 
-setClock('.timer', deadline);
+// setClock('.timer', deadline); // запускает таймер для элемента с классом .timer и передает конечную дату (deadline)
+
+// последовательность выполнения
+
+// 1. обьявляется deadline и функции
+// 2. вызывается setClock :
+    // находятся html-элементы для таймера
+    // устанавливается интервал вызова updateClock каждые 1000 миллисекунд
+    // первый вызов updateClock происходит сразу
+// 3. в updateClock :
+    // вызывается etTimeRemaining чтобы рассчитать оставшееся время
+    // результаты вставляются в html-элементы
+    // если время истекло интервал останавливается
+// 4. каждую секунду updateClock повторяется пока время не истечет
+
+// когда t.total становится меньше или равно нулю выполнение останавливается и таймер больше не обновляется
+
+
+
+
+
+
+// module1-task100 параметры документа, окна и работа с ними
+
+// const box = document.querySelector('.box'),
+//       btn = document.querySelector('button');
+
+// const width = box.clientWidth; // получение ширины без учета padding margin и полосы прокрутки
+// const height = box.clientHeight; // получение высоты без учета padding margin и полосы прокрутки
+
+// console.log(width, height);
+
+// const width = box.offsetWidth; // получение ширины с учетом padding margin и полосы прокрутки
+// const height = box.offsetHeight; // получение высоты с учетом padding margin и полосы прокрутки
+
+// console.log(width, height);
+
+// const width = box.scrollWidth; // получение ширины без учета полосы прокрутки
+// const height = box.scrollHeight; // получение высоты с учетом всей полосы прокрутки то есть высота всего окна с контентом
+
+// console.log(width, height);
+
+// btn.addEventListener('click', () => { // при нажатии на кнопку выдвигается вся высота окна
+//   box.style.height = box.scrollHeight + 'px';
+// });
+
+// console.log(box.getBoundingClientRect()); // метод получает все границы элемента / выводит все кординаты
+
+
+// // получение уже примененных стилей из css то есть computed styles
+
+// const style = window.getComputedStyle(box); // метод обьекта window работает с заданным элементом, можно получить и стили псевдо элемента если задать его вторым параметром через запятую
+
+// console.log(style); // большой обьект со всеми стилями
+// console.log(style.display); // конкретное свойство
+
