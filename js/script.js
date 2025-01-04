@@ -4899,3 +4899,146 @@
 
 
 // module1-task101 создаем модальное окно
+
+// для одной модалки методом add remove
+
+// const modalTrigger = document.querySelector('[data-modal]'),
+//       modal = document.querySelector('.modal'),
+//       modalCloseBtn = document.querySelector('[data-close]');
+
+// modalTrigger.addEventListener('click', () => {
+//   modal.classList.add('show');
+//   modal.classList.remove('hide');
+//   document.body.style.overflow = 'hidden';
+// });
+
+// modalCloseBtn.addEventListener('click', () => {
+//   modal.classList.add('hide');
+//   modal.classList.remove('show');
+//   document.body.style.overflow = '';
+// });
+
+
+// вариант с toggle
+
+// const modalTrigger = document.querySelector('[data-modal]'),
+//       modal = document.querySelector('.modal'),
+//       modalCloseBtn = document.querySelector('[data-close]');
+
+// modalTrigger.addEventListener('click', () {
+//   modal.classList.toggle('show');
+//   document.body.overflow = 'hidden';
+// });
+
+// modalCloseBtn.addEventListener('click', () {
+//   modal.classList.toggle('show');
+//   document.body.style.overflow = '';
+// });
+
+
+// для всех кнопок через перебор псевдомассива
+
+// const modalTrigger = document.querySelectorAll('[data-modal]'),
+//       modal = document.querySelector('.modal'),
+//       modalCloseBtn = document.querySelector('[data-close]');
+
+// modalTrigger.forEach(btn => {
+//     btn.addEventListener('click', () => {
+//     modal.classList.add('show');
+//     modal.classList.remove('hide');
+//     document.body.style.overflow = 'hidden';
+//   });
+// });
+
+// modalCloseBtn.addEventListener('click', () => {
+//   modal.classList.add('hide');
+//   modal.classList.remove('show');
+//   document.body.style.overflow = '';
+// });
+
+
+// закрытия модалки при клике на подложку
+
+// const modalTrigger = document.querySelectorAll('[data-modal]'),
+//       modal = document.querySelector('.modal'),
+//       modalCloseBtn = document.querySelector('[data-close]');
+
+// modalTrigger.forEach(btn => {
+//     btn.addEventListener('click', () => {
+//     modal.classList.add('show');
+//     modal.classList.remove('hide');
+//     document.body.style.overflow = 'hidden';
+//   });
+// });
+
+// function closeModal() { // функция для dont repeat yourserf
+//   modal.classList.add('hide');
+//   modal.classList.remove('show');
+//   document.body.style.overflow = '';
+// }
+
+// modalCloseBtn.addEventListener('click', closeModal);
+
+// modal.addEventListener('click', (e) => {
+//   if (e.target === modal) {
+//     closeModal();
+//   }
+// });
+
+// document.addEventListener('keydown', (e) => { // для закрытия модалки с помощью esc
+//   if (e.code === "Escape" && modal.classList.contains('show')) {
+//     closeModal();
+//   }
+// });
+
+
+
+
+
+// module1-task102 модификация модального окна
+
+// const modalTrigger = document.querySelectorAll('[data-modal]'), 
+//       modal = document.querySelector('.modal'),
+//       modalCloseBtn = document.querySelector('[data-close]');
+
+// function openModal() {
+//   modal.classList.add('show');
+//   modal.classList.remove('hide');
+//   document.body.style.overflow = 'hidden';
+//   clearInterval(modalTimerId);
+// }
+
+// modalTrigger.forEach(btn => {
+//   btn.addEventListener('click', openModal);
+// });
+
+// function closeModal() {
+//   modal.classList.add('hide');
+//   modal.classList.remove('show');
+//   document.body.style.overflow = '';
+// }
+
+// modalCloseBtn.addEventListener('click', closeModal);
+
+// modal.addEventListener('click', (e) => {
+//   if (e.target === modal) {
+//     closeModal();
+//   }
+// });
+
+// document.addEventListener('keydown', (e) => {
+//   if (e.code === "Escape" && modal.classList.contains('show')) {
+//     closeModal();
+//   }
+// });
+
+// const modalTimerId = setTimeout(openModal, 5000);
+
+// function showModalByScroll() {
+//   if (window.scrollY + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+//     openModal();
+//     window.removeEventListener('scroll', showModalByScroll);
+//   }
+// }
+
+// window.addEventListener('scroll', showModalByScroll);
