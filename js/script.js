@@ -5042,3 +5042,20 @@
 // }
 
 // window.addEventListener('scroll', showModalByScroll);
+
+
+
+
+// module1-task103 MutationObserver, ResizeObserver and contenteditable
+
+// const box = document.querySelector('.box');
+
+// let observer = new MutationObserver(mutationRecords => {
+//   console.log(mutationRecords);
+// });
+
+// observer.observe(box, {
+//   childList: true
+// })
+
+// observer.disconnect();
