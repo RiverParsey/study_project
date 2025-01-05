@@ -5097,3 +5097,116 @@
 // console.log(alex);
 
 // конструкторы нужны для создания новых однотипных обьектов
+
+
+
+
+// module1-task105  контекст вызова this
+
+// контекст вызова функции
+
+// функция может вызываться 4 способами
+// function showThis(a, b) { // в этом виде this ссылается на обьект window
+//   console.log(this);
+//   function sum() {
+//     console.log(this); // undefined
+//     return this.a + this.b;
+//   }
+
+//   console.log(sum());
+// }
+// showThis(4, 5);
+
+// function showThis(a, b) {
+//   console.log(this);
+//   function sum() {
+//     console.log(this); // для решения убираем this ниже используя замыкание
+//     return a + b;
+//   }
+
+//   console.log(sum());
+// }
+// showThis(4, 5);
+
+// // 1) обычная функция: this = window, но если стоит use strict = undefined
+
+// const obj = {
+//   a: 20,
+//   b: 15,
+//   sum: function() {
+//     function shout() {
+//       console.log(this);
+//     }
+//     shout();
+//   }
+// }
+
+// obj.sum();
+
+// // 2) контекст у методов обьекта - сам обьект
+
+// function User(name, id) {
+//   this.name = name;
+//   this.id = id;
+//   this.human = true;
+//   this.hello = function() {
+//     console.log('Hello! ' + this.name);
+//   };
+// }
+
+// let ivan = new User('Ivan', 23);
+
+// // 3) this в конструкторах и классах - это новый экземпляр обьекта
+
+// function sayName(surname) {
+//   console.log(this);
+//   console.log(this.name + surname);
+// }
+
+// const user = {
+//   name: 'John'
+// };
+
+// sayName.call(user, 'Smith'); // аргументы передаются через запятую
+// sayName.apply(user, ['Smith']); // аргументы передаются через массив
+
+// function count(num) {
+//   return this * num;
+// }
+
+// const double = count.bind(2);
+// console.log(double(3));
+
+// 4) ручная привязка this: call, apply, bind
+
+
+// const btn = document.querySelector('button');
+
+// btn.addEventListener('click', function() {
+//   console.log(this); // при вызове обычной функции контекстом вызова будет сам элемент на котором произошло событие
+// });
+
+// btn.addEventListener('click', () => {
+//   console.log(this); // при вызове стрелочной функции контекст вызова теряется this = undefined
+// });
+
+
+// const obj = {
+//   num: 5,
+//   sayNumber: function() {
+//     const say = () => { // у стрелочных функций нет контекста вызова, всегда ссылается на родителя
+//       console.log(this);
+//     };
+
+//     say();
+//   }
+// };
+
+// obj.sayNumber();
+
+
+// const double = (a) => {
+//   return a * 2;
+// };
+
+// const double = a => a * 2; // укороченная версия, делает то же самое
