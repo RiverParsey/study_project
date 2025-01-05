@@ -5059,3 +5059,41 @@
 // })
 
 // observer.disconnect();
+
+
+
+
+// module1-task104 функции конструкторы
+
+// функция по своей сути является обьектом
+
+// const num = new Number(); // создание обьекта Number
+
+// const func = new Function(); // то же самое можно и с функцией
+
+// но основе стандарта ES5, в стандарте ES6 используются классы
+// function User(name, id) { // функция конструктор, предназначены для создания обьектов
+//   this.name = name;
+//   this.id = id;
+//   this.human = true;
+//   this.hello = function() { // также принимает создание методов внутри конструктора
+//     console.log(`Hello ${this.name}`);
+//   };
+// }
+
+// User.prototype.exit = function(name) {
+//   console.log(`User ${this.name} is go`);
+// };
+
+// const ivan = new User('Ivan', 28);
+// const alex = new User('Alex', 20);
+
+// ivan.exit();
+
+// ivan.hello();
+// alex.hello();
+
+// console.log(ivan);
+// console.log(alex);
+
+// конструкторы нужны для создания новых однотипных обьектов
