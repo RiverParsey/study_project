@@ -5219,36 +5219,88 @@
 // классы это красивые обертки для функций конструкторов
 // нужны для упрощения шаблонизации
 
-class Rectangle { //создание классы
-  constructor(height, width) { // в конструктор передаются параметры нужные при использовании
-    this.height = height; // this ссылается на созданный обьект внутри события constructor
-    this.width = width; // тоже самое только со свойством height
+// class Rectangle { //создание классы
+//   constructor(height, width) { // в конструктор передаются параметры нужные при использовании
+//     this.height = height; // this ссылается на созданный обьект внутри события constructor
+//     this.width = width; // тоже самое только со свойством height
+//   }
+
+//   calcArea() { // создание метода класса
+//     return this.height * this.width; // возвращение выполнения метода
+//   }
+// }
+
+// class ColoredRectangleWithText extends Rectangle{ // создание нового класса с наследованием свойств от класса Rectangle
+//   constructor(height, width, text, bgColor) { // выбор параметров конструктора нужных из класса Rectangle также добавление новых нужных для ColoredRectangleWithText
+//     super(height, width); // методом super() запускается наследование параметров из класса Rectangle
+//     this.text = text; // this опять же ссылается на новосозданный обьект, присваеваем значения
+//     this.bgColor = bgColor; // this опять же ссылается на новосозданный обьект, присваеваем значения
+//   }
+
+//   showMyProps() { // создание метода класса ColoredRectangleWithText, showMyProps()
+//     console.log(`text: ${this.text}, color: ${this.bgColor}`); // метод выводит в консоль созданные значения для проверки работы класса
+//   }
+// }
+
+// const div = new ColoredRectangleWithText(25, 10, 'Hello World', 'red'); // создание нового обьекта/элемента div с использованием класса ColoredRectangleWithText
+
+// div.showMyProps(); // испозование метода showMyProps для показа значений использованных при создании div
+// console.log(div.calcArea()); // вывод в консоль результат выполнения метода calcArea() созданном в Rectangle
+
+// const square = new Rectangle(10, 10); // создание квадрата с использованием класса Rectangle, аргументы width height
+// const long = new Rectangle(20, 100); // создание прямоугольника с использованием класса Rectangle, аргументы width height
+
+// console.log(long.calcArea()); // использования метода класса Rectangle для вычисления площади прямоугольника calcArea()
+// console.log(square.calcArea()); // использование метода класса Rectangle для вычисления площади квадрата calcArea()
+
+
+
+
+
+// module1-task107 используем классы в реальной работе
+
+// использование классов для карточек
+
+class MenuCard {
+  constructor(src, alt, title, descr, price, parentSelector) {
+    this.src = src;
+    this.alt = alt;
+    this.title = title;
+    this.descr = descr;
+    this.price = price;
+    this.parent = document.querySelector(parentSelector);
+    this.trasfer = 27;
+    this.changeToUah();
   }
 
-  calcArea() { // создание метода класса
-    return this.height * this.width; // возвращение выполнения метода
+  changeToUah() {
+    this.price = this.price * this.trasfer;
+  }
+
+  render() {
+    const element = document.createElement('div');
+    element.innerHTML = `
+      <div class="menu__item">
+        <img src=${this.src} alt=${this.alt}>
+        <h3 class="menu__item-subtitle>${this.title}</h3>
+        <div class="menu__item-descr>${this.descr}</div>
+        <div class="menu__item-divider></div>
+        <div class="menu__item-price>
+          <div class="menu__item-cost">price:</div>
+          <div class="menu__item-total"><span>${this.price}</span> uah/day</div>
+        </div>
+      </div>
+    `;
+    this.parent.append(element);
   }
 }
 
-class ColoredRectangleWithText extends Rectangle{ // создание нового класса с наследованием свойств от класса Rectangle
-  constructor(height, width, text, bgColor) { // выбор параметров конструктора нужных из класса Rectangle также добавление новых нужных для ColoredRectangleWithText
-    super(height, width); // методом super() запускается наследование параметров из класса Rectangle
-    this.text = text; // this опять же ссылается на новосозданный обьект, присваеваем значения
-    this.bgColor = bgColor; // this опять же ссылается на новосозданный обьект, присваеваем значения
-  }
+new MenuCard(
+  "img/tabs/vegy.jpg",
+  "vegy",
+  'menu "fitness"',
+  'menu "fitness", its a new way to',
+  9,
+  '.menu .container'
+).render();
 
-  showMyProps() { // создание метода класса ColoredRectangleWithText, showMyProps()
-    console.log(`text: ${this.text}, color: ${this.bgColor}`); // метод выводит в консоль созданные значения для проверки работы класса
-  }
-}
-
-const div = new ColoredRectangleWithText(25, 10, 'Hello World', 'red'); // создание нового обьекта/элемента div с использованием класса ColoredRectangleWithText
-
-div.showMyProps(); // испозование метода showMyProps для показа значений использованных при создании div
-console.log(div.calcArea()); // вывод в консоль результат выполнения метода calcArea() созданном в Rectangle
-
-const square = new Rectangle(10, 10); // создание квадрата с использованием класса Rectangle, аргументы width height
-const long = new Rectangle(20, 100); // создание прямоугольника с использованием класса Rectangle, аргументы width height
-
-console.log(long.calcArea()); // использования метода класса Rectangle для вычисления площади прямоугольника calcArea()
-console.log(square.calcArea()); // использование метода класса Rectangle для вычисления площади квадрата calcArea()
