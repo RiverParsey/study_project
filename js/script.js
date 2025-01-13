@@ -5310,66 +5310,96 @@
 
 // module1-task108 Rest оператор и его параметры по умолчанию
 
-const log = function(a, b, ...rest) {
-  console.log(a, b, rest);
-}
+// const log = function(a, b, ...rest) {
+//   console.log(a, b, rest);
+// }
 
-log('basic', 'rest', 'operator', 'usage');
+// log('basic', 'rest', 'operator', 'usage');
 
-function calcOrDouble(number, basis = 2) {
-  console.log(number * basis);
-}
+// function calcOrDouble(number, basis = 2) {
+//   console.log(number * basis);
+// }
 
-calcOrDouble(3);
+// calcOrDouble(3);
 
 
-class MenuCard {
-  constructor(src, alt, title, descr, price, parentSelector, ...classes) {
-    this.src = src;
-    this.alt = alt;
-    this.title = title;
-    this.descr = descr;
-    this.price = price;
-    this.classes = classes;
-    this.parent = document.querySelector(parentSelector);
-    this.trasfer = 27;
-    this.changeToUah();
-  }
+// class MenuCard {
+//   constructor(src, alt, title, descr, price, parentSelector, ...classes) {
+//     this.src = src;
+//     this.alt = alt;
+//     this.title = title;
+//     this.descr = descr;
+//     this.price = price;
+//     this.classes = classes;
+//     this.parent = document.querySelector(parentSelector);
+//     this.trasfer = 27;
+//     this.changeToUah();
+//   }
 
-  changeToUah() {
-    this.price = this.price * this.trasfer;
-  }
+//   changeToUah() {
+//     this.price = this.price * this.trasfer;
+//   }
 
-  render() {
-    const element = document.createElement('div');
+//   render() {
+//     const element = document.createElement('div');
     
-    if (this.classes.length === 0) {
-      this.element = 'menu__item';
-      element.classList.add(this.element);
-    } else {
-      this.classes.forEach(className => element.classList.add(className));
-    }
+//     if (this.classes.length === 0) {
+//       this.element = 'menu__item';
+//       element.classList.add(this.element);
+//     } else {
+//       this.classes.forEach(className => element.classList.add(className));
+//     }
 
-    element.innerHTML = `
-        <img src=${this.src} alt=${this.alt}>
-        <h3 class="menu__item-subtitle>${this.title}</h3>
-        <div class="menu__item-descr>${this.descr}</div>
-        <div class="menu__item-divider></div>
-        <div class="menu__item-price>
-          <div class="menu__item-cost">price:</div>
-          <div class="menu__item-total"><span>${this.price}</span> uah/day</div>
-        </div>
-    `;
-    this.parent.append(element);
-  }
-}
+//     element.innerHTML = `
+//         <img src=${this.src} alt=${this.alt}>
+//         <h3 class="menu__item-subtitle>${this.title}</h3>
+//         <div class="menu__item-descr>${this.descr}</div>
+//         <div class="menu__item-divider></div>
+//         <div class="menu__item-price>
+//           <div class="menu__item-cost">price:</div>
+//           <div class="menu__item-total"><span>${this.price}</span> uah/day</div>
+//         </div>
+//     `;
+//     this.parent.append(element);
+//   }
+// }
 
-new MenuCard(
-  "img/tabs/vegy.jpg",
-  "vegy",
-  'menu "fitness"',
-  'menu "fitness", its a new way to',
-  9,
-  '.menu .container',
-).render();
+// new MenuCard(
+//   "img/tabs/vegy.jpg",
+//   "vegy",
+//   'menu "fitness"',
+//   'menu "fitness", its a new way to',
+//   9,
+//   '.menu .container',
+// ).render();
 
+
+
+
+
+// module1-task109 JSON формат передачи данных, глубокое копирование обьектов
+
+// const persone = {
+//   name: 'Alex',
+//   tel: '+7444444'
+// };
+
+// console.log(JSON.stringify(persone)); // метод stringify трансформирует обьект JS в обьект JSON, такой обьект можно отправить на сервер
+
+// console.log(JSON.parse(JSON.stringify(persone))); // метод parse трансформирует обьект JSON в обьект JS
+
+// глубокое копирование
+
+// const persone = {
+//   name: 'Alex',
+//   tel: '+7444444',
+//   parents: {
+//     mom: 'Olga',
+//     dad: 'Mike'
+//   }
+// };
+
+// const clone = JSON.parse(JSON.stringify(persone)); // будет сделана полностью независимая глубокая копия обекта persone
+// clone.parents.mom = 'Ann';
+// console.log(persone); // в данном случае ничего не изменится, значение свойства mom останется Olga
+// console.log(clone); // здесь же значение свойства mom будет Ann
