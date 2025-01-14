@@ -5403,3 +5403,36 @@
 // clone.parents.mom = 'Ann';
 // console.log(persone); // в данном случае ничего не изменится, значение свойства mom останется Olga
 // console.log(clone); // здесь же значение свойства mom будет Ann
+
+
+
+
+
+// module1-task110 AJAX и общение с сервером
+
+
+// const inputRub = document.querySelector('#rub'),
+//       inputUsd = document.querySelector('#usd');
+
+// inputRub.addEventListener('input', () => {
+//   const request = new XMLHttpRequest();
+
+//   request.open('GET', 'js/current.json'); // метод open() принимает аргументы method url async login pass
+//   request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+//   request.send();
+
+//   request.addEventListener('readystatechange', () => {
+//     if (request.status === 200) {
+//       console.log(request.response);
+//       const data = JSON.parse(request.response);
+//       inputUsd.value = (+inputRub.value / data.current.usd).toFixed;
+//     } else {
+//       inputUsd.value = 'something went wrong';
+//     }
+//   });
+
+//   // status
+//   // statusText
+//   // response
+//   // readyState
+// });
