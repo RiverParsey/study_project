@@ -5725,3 +5725,99 @@
 // Promise.race([test(1000), test(2000)]).then(() => {
 //   console.log('All');
 // });
+
+
+
+
+
+// module1-task114 Fetch API
+
+// fetch('https://jsonplaceholder.typicode.com/posts', {
+//   method: "POST",
+//   body: JSON.stringify({name: 'Alex'}),
+//   headers: {
+//     'Content-type': 'application/json'
+//   }
+// })
+//   .then(response => response.json())
+//   .then(json => console.log(json));
+
+// перепись функционала под fetch api
+
+// const forms = document.querySelectorAll('form'); // сбор всех форм на странице
+
+// const message = { // обьект с сообщениями для оповещения пользователя про статус запроса
+//   loading: 'img/form/spinner.svg', // вместо обычного сообщения о загрузке берем спинер
+//   success: 'success',
+//   failure: 'failure'
+// };
+
+// forms.forEach(item => { // перебор всех форм с последующим запуском функции postData на каждой из них
+//   postData(item);
+// });
+
+// function postData(form) { // функция postData с параметром form
+//   form.addEventListener('submit', (e) => { // обработчик событий следит за подтверждением отправки форм
+//     e.preventDefault(); // обнуление стандартного поведения для предотвращения перезагрузки страницы при отправке формы
+
+//     const statusMessage = document.createElement('img'); // создаем элемент img для спинера
+//     statusMessage.src = message.loading; // передача пути для создания спинера
+//     statusMessage.style.cssText = `
+//       display: block;
+//       margin: 0 auto;
+//     `; // стили для центровки спинера
+//     form.insertAdjacentElement('afterend', statusMessage); // метод insertAdjacentElement() с аргументами куда и что помещать в форму, по сути тот же append() только с аргументами
+
+//     const formData = new FormData(form); // создание обьекта FormData в переменной formData
+
+//     const object = {}; // пустой обьект для сохранения ключей формы
+//     formData.forEach(function(value, key) { // перебор ключей в обьекте formData с последующей записью их в пустой обьект object
+//       object[key] = value;
+//     });
+
+//     fetch('server.php', {
+//       method: "POST",
+//       headers: {
+//         'Content-type': 'application/json'
+//       },
+//       body: JSON.stringify(object)
+//     })
+//     .then(data => data.text())
+//     .then(data => {
+//         console.log(data); // выводится data в консоль
+//         showThanksModal(message.success); // вызов функции showThanksModal для оповещения пользователя
+//         statusMessage.remove(); // удаления сообщения о статусе выполнения
+//     })
+//     .catch(() => {
+//       showThanksModal(message.failure); // вызов функции showThanksModal для оповещения об ошибке
+//     })
+//     .finally(() => {
+//       form.reset(); // очистка формы
+//     });
+
+//   });
+// }
+
+// function showThanksModal(message) { // создание функции showThanksModal с параметром обьекта message
+//   const prevModalDialog = document.querySelector('.modal__dialog'); // сохранение элемента для блока оповещения в переменной prevModalDialog
+
+//   prevModalDialog.classList.add('hide'); // начальное скрытие элемента добавлением класса
+//   openModal(); // вызов функции openModal
+
+//   const thanksModal = document.createElement('div'); // создание элемента для блока оповещения
+//   thanksModal.classList.add('modal__dialog'); // добавление класса для блока оповещения
+//   thanksModal.innerHTML = `
+//     <div class="modal__content">
+//       <div class="modal__close" data-close>x</div>
+//       <div class="modal__title">${message}</div>
+//     </div>
+//   `; // структура для блока оповещения
+
+//   document.querySelector('.modal').append(thanksModal); // добавление блока thanksModal в блок modal
+//   setTimeout(() => { // создание таймера на элементе
+//     thanksModal.remove(); // удаление элемента thanksModal для замены его на блок оповещения
+//     prevModalDialog.classList.add('show'); // добавление класса для показа блоку с оповещением
+//     prevModalDialog.classList.remove('hide'); // удаление класса для скрытия блока с оповещением
+//     closeModal(); // закрытие окна
+//   }, 4000); // через 4 секунды 
+// }
