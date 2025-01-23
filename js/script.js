@@ -5821,3 +5821,255 @@
 //     closeModal(); // закрытие окна
 //   }, 4000); // через 4 секунды 
 // }
+
+
+// задача 1
+// function wait(ms) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(`прошло ${ms} миллисекунд`);
+//     }, ms)
+//   })
+// }
+
+// wait(2000).then(() => console.log('прошло 2000 миллисекунд'));
+
+// // задача 2
+// function checkPassword(password) {
+//   return new Promise((resolve, reject) => {
+//     if (password.length >= 8) {
+//       resolve('Пароль подходит');
+//     } else {
+//       reject('Пароль слишком короткий');
+//     }
+//   })
+// }
+
+// checkPassword('mypassword')
+//   .then((message) => console.log(message))
+//   .catch((error) => console.log(error));
+
+// // задача 3
+// function fetchData(success) {
+//   return new Promise((resolve, reject) => { 
+//     setTimeout(() => {
+//       if (success === true) {
+//         resolve([1, 2, 3]);
+//       } else {
+//         reject('Не удалось загрузить данные');
+//       }
+//     }, 2000);
+//   })
+// }
+
+// fetchData(false)
+//   .then((data) => console.log('Данные:', data))
+//   .catch((error) => console.log('Ошибка:', error));
+
+// // задача 4
+
+// function step1() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('Шаг 1 выполнен');
+//     }, 1000);
+//   })
+// }
+
+// function step2() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('Шаг 2 выполнен');
+//     }, 2000);
+//   })
+// }
+
+// function step3() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('Шаг 3 выполнен');
+//     }, 1000);
+//   })
+// }
+
+// step1()
+//   .then((message) => {
+//     console.log(message);
+//     return step2();
+//   })
+//   .then((message) => {
+//     console.log(message);
+//     return step3();
+//   })
+//   .then((message) => {
+//     console.log(message);
+//   });
+
+// // задача 5
+
+// function loadUser() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve({
+//         id: 1,
+//         name: 'Андрей'
+//       })
+//     }, 1000);
+//   })
+// }
+
+// function loadPosts() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve([
+//       'Пост 1',
+//       'Пост 2'
+//       ])
+//     }, 2000);
+//   })
+// }
+
+// function loadComments() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve([
+//         'Комментарий 1',
+//         'Комментарий 2'
+//       ])
+//     }, 1500);
+//   })
+// }
+
+// Promise.all([loadUser(), loadPosts(), loadComments()])
+//   .then(([user, posts, comments]) => {
+//     console.log('Пользователь:', user);
+//     console.log('Посты:', posts);
+//     console.log('Комментарии:', comments);
+//   });
+
+// // задача 6
+
+// const fastTask = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('Быстрая задача выполнена');
+//     }, 1000);
+//   });
+// };
+
+// const slowTask = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('Медленная задача выполнена');
+//     }, 3000);
+//   });
+// };
+
+// Promise.race([fastTask(), slowTask()])
+//   .then((message) => console.log('Первая завершившаяся задача:', message));
+
+// // задача 7
+
+// const simulateError = (shouldFail) => {
+//   return new Promise((resolve, reject) => {
+//     if (shouldFail === true) {
+//       reject('Произошла ошибка');
+//     } else {
+//       resolve('Все прошло хорошо');
+//     }
+//   });
+// };
+
+// simulateError(false)
+//   .then((message) => console.log(message))
+//   .catch((error) => console.log(error));
+
+// // задача 8
+
+// const delayedTask = (time) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (time < 3000) {
+//         resolve(`Выполнено через ${time} миллисекунд`);
+//       } else {
+//         reject('Задача слишком долгая');
+//       }
+//     }, time);
+//   })
+// };
+
+// delayedTask(3001)
+//   .then((message) => console.log(message))
+//   .catch((error) => console.log(error));
+
+
+
+
+// module1-task115 методы перебора массивов
+
+// filter
+
+// const names = ['Ivan', 'Ann', 'Ksenia', 'Voldemart'];
+
+// const shortNames = names.filter(function(name) {
+//   return name.length < 5;
+// });
+
+// console.log(shortNames);
+
+
+// map
+
+// const answers = ['IvAn', 'AnnA', 'HellO'];
+
+// const result = answers.map(item => {
+//   return item.toLowerCase();
+// });
+
+// console.log(result);
+
+
+// every/some
+
+// const some = [4, 'qwq', 'srhgth'];
+
+// console.log(some.some(item => typeof(item) === 'number'));
+
+// console.log(some.every(item => typeof(item) === 'number'));
+
+
+// reduce
+
+// const arr = [4, 5, 1, 3, 2, 6];
+//                         // 0     4
+//                         // 4     5
+//                         // 9     1
+//                         // 10    3
+//                         // 13    2
+//                         // 15    6
+
+// const res = arr.reduce((sum, current) => sum + current); // последним аргументом можно добавить начальную сумму, тогда все начнется с данного числа
+
+// console.log(res);
+
+// const arr = ['apple', 'pear', 'plum'];
+
+// const res = arr.reduce((sum, current) => `${sum}, ${current}`);
+
+// console.log(res);
+
+
+// примеры
+
+// const obj = {
+//   ivan: 'persone',
+//   ann: 'persone',
+//   dog: 'animal',
+//   cat: 'animal'
+// };
+
+// const newArr = Object.entries(obj) // метод Object.entries() возвращает массив массивов
+// .filter(item => item[1] === 'persone') // методом filter возвращается элементы у которых второй элемент/значение равно 'persone'
+// .map(item => item[0]); // метод map возвращает только первые элементы/ключи то есть имена
+
+// console.log(newArr);
