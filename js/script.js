@@ -6007,7 +6007,7 @@
 
 // module1-task115 методы перебора массивов
 
-// filter
+// filter - фильтрует элементы внутри массива, 
 
 // const names = ['Ivan', 'Ann', 'Ksenia', 'Voldemart'];
 
@@ -6073,3 +6073,107 @@
 // .map(item => item[0]); // метод map возвращает только первые элементы/ключи то есть имена
 
 // console.log(newArr);
+
+
+// задачи по методам массивов #1
+
+// 1) У вас есть список фильмов с рейтингом в виде массива объектов. Напишите функцию showGoodFilms, которая будет принимать этот массив, а возвращать будет массив объектов только с теми фильмами, у которых рейтинг больше или равен 8.
+
+// P.S. Это довольно типичная задача в программировании. Вспомните, на самых разных сайтах можно так фильтровать любые товары/фильмы/сериалы...
+
+// 2) Напишите функцию showListOfFilms, которая будет принимать этот же массив, а возвращать будет строку, которая содержит названия фильмов через запятую.
+
+// Пример:
+
+// showListOfFilms(films) => "Titanic, Die hard 5, Matrix, Some bad film"
+
+// 3) Напишите функцию setFilmsIds, которая будет принимать этот же массив, а возвращать будет такой же массив с фильмами, но у каждого фильма будет новое поле id. Значение этого поля установите по нумерации фильма.
+
+// Пример:
+
+// setFilmsIds(films)  => [   { name: 'Titanic', rating: 9, id: 0 },   { name: 'Die hard 5', rating: 5, id: 1 },   { name: 'Matrix', rating: 8, id: 2 },   { name: 'Some bad film', rating: 4, id: 3 } ]
+
+// 4) Запишите результат предыдущей функции в переменную tranformedArray. Напишите функцию checkFilms, которая будет проверять, что в каждом из фильмов есть поле id.
+// Если это так - функция возвращает true. Очевидно, что сейчас условие должно выполняться, если мы передаем checkFilms(tranformedArray);
+
+// const films = [
+//   {
+//       name: 'Titanic',
+//       rating: 9
+//   },
+//   {
+//       name: 'Die hard 5',
+//       rating: 5
+//   },
+//   {
+//       name: 'Matrix',
+//       rating: 8
+//   },
+//   {
+//       name: 'Some bad film',
+//       rating: 4
+//   }
+// ];
+
+// function showGoodFilms(arr) {
+//   return console.log(arr.filter(item => item.rating >= 8));
+// }
+
+// function showListOfFilms(arr) {
+//   return console.log(arr.map(item => item.name).join(', '));
+// }
+
+
+// // первый способ, ES6
+
+// // function setFilmsIds(arr) {
+// //   return console.log(arr.map((item, index) => ({...item, id: index })));
+// // }
+
+// const tranformedArray = setFilmsIds(films);
+
+
+// // второй способ ES5
+
+// function setFilmsIds(arr) {
+//   return arr.map(function(item, index) {
+//     let newItem = Object.assign({}, item);
+//     newItem.id = index;
+//     return newItem;
+//   });
+// }
+
+
+// // первый способ
+
+// function checkFilms(arr) {
+//   return console.log(arr.every(item => item.hasOwnProperty('id')));
+// }
+
+
+// // второй способ
+
+// function checkMovies(arr) {
+//   return arr.every(item => {
+//     if (item.id !== undefined) {
+//       return console.log(true);
+//     } else {
+//       return console.log(false);
+//     }
+//   })
+// }
+
+// checkFilms(tranformedArray);
+
+// checkMovies(tranformedArray);
+
+
+// задачи по методам массивов #2
+
+
+
+
+
+// module1-task116 подробно про npm и проект.JSON-server
+
+// только теория без установки, не помню есть ли установленный npm в этом проекте, но здесь он и не нужен
