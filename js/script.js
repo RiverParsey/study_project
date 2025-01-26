@@ -6170,7 +6170,47 @@
 
 // задачи по методам массивов #2
 
+// 1) У вас есть небольшой массив с данными о доходах каждой торговой точки. Напишите функцию getPositiveIncomeAmount, которая принимает этот массив данных и возвращает сумму только положительных значений из каждого объекта. (число)
 
+// Пример:
+// getPositiveIncomeAmount(funds) => 13300
+
+// 2) Напишите функцию getTotalIncomeAmount, которая тоже принимает этот массив данных. Если хотя бы один из объектов содержит отрицательное значение поля amount, то функция возвращает сумму всех значений.
+// (число) Если таких значений нет - запускается функция getPositiveIncomeAmount с тем же массивом данных.
+
+// Пример:
+// getTotalIncomeAmount(funds) => -500
+
+// const funds = [
+//   {amount: -1400},
+//   {amount: 2400},
+//   {amount: -1000},
+//   {amount: 500},
+//   {amount: 10400},
+//   {amount: -11400}
+// ];
+
+// const getPositiveIncomeAmount = (data) => {
+//   return data.reduce((acc, curr) => {
+//     if (curr.amount > 0) {
+//       return acc + curr.amount;
+//     } else {
+//       return acc;
+//     }
+//   }, 0)
+// };
+
+// console.log(getPositiveIncomeAmount(funds));
+
+// const getTotalIncomeAmount = (data) => {
+//   if (data.some(item => item.amount < 0)) {
+//     return data.reduce((acc, curr) => acc + curr.amount, 0);
+//   } else {
+//     return getPositiveIncomeAmount(data);
+//   }
+// };
+
+// console.log(getTotalIncomeAmount(funds));
 
 
 
@@ -6317,3 +6357,15 @@
 //     closeModal();
 //   }, 4000);
 // }
+
+
+
+
+// module1-task118 Дополнительно: что такое библиотеки, библиотека axios
+
+// axios.get('http://localhost:3000/menu')
+//   .then(data => {
+//     data.data.forEach(({img, altimg, title, descr, price}) => {
+//       new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+//     });
+//   });
