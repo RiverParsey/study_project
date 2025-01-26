@@ -6369,3 +6369,65 @@
 //       new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
 //     });
 //   });
+
+
+
+
+// module1-task119 создаем слайдер на сайте, вариант 1
+
+// slider
+
+
+// // обявление переменных
+// const slides = document.querySelectorAll('.offer__slide'), // содержит массив всех элементов с классом .offer__slide, это и есть слайды которые будут переключаться
+//       prev = document.querySelector('.offer__slider-prev'), // ссылка на элемент который переключает на предыдущий слайд
+//       next = document.querySelector('.offer__slider-next'), // ссылка на элемент который переключает на следующий слайд
+//       total = document.querySelector('#total'), // ссылка на элемент где будет отображаться общее количество слайдов
+//       current = document.querySelector('#current');// ссылка на элемент где будет отображаться текущий номер слайда
+// let slideIndex = 1; // номер текущего активного слайда, начинается с 1
+
+// // первоначальная настройка
+// showSlides(slideIndex); // вызов функции для отображения слайда с номером заданным в slideIndex
+
+// // установка общего числа слайдов
+// if (slides.length < 10) { // если слайдов меньше 10, добавляется ведущий ноль
+//   total.textContent = `0${slides.length}`;
+// } else { // если 10 или больше, отображается обычное число
+//   total.textContent = slides.length;
+// }
+
+// // функция для отображения слайдов
+// function showSlides(n) {
+//   if (n > slides.length) { // если значение n больше количества слайдов, то slideIndex устанавливается на 1 (возврат к первому слайду)
+//     slideIndex = 1;
+//   }
+
+//   if (n < 1) { // если n меньше 1, то индекс устанавливается на последний слайд
+//     slideIndex = slides.length;
+//   }
+
+//   slides.forEach(item => item.style.display = 'none'); // перебор всех слайдов, скрываются все слайды
+
+//   slides[slideIndex - 1].style.display = 'block'; // показывает только текущий слайд, -1 потому что индексы массива начинаются с 0
+
+//   if (slides.length < 10) { // если слайдов меньше 10
+//     current.textContent = `0${slideIndex}`; // обновляется номер текущего слайда
+//   } else { // если больше 10
+//     current.textContent = slideIndex; // подставляется номер текущего слайда
+//   }
+// }
+
+// // переключение слайдов
+// function plusSlides(n) { // plusSlides увеличивает или уменьшает slideIndex на n
+//   showSlides(slideIndex += n); // после изменения вызывает showSlides(slideIndex) для обновления изображения
+// }
+
+// // обработчики событий для кнопок
+// prev.addEventListener('click', () => { // при клике на кнопку prev
+//   plusSlides(-1); // вызывается plusSlides(-1) уменьшая индекс на 1
+// });
+
+// next.addEventListener('click', () => { // при клике на кнопку next
+//   plusSlides(1); // вызывается plusSlides(1) увеличивая индекс на 1
+// });
+
