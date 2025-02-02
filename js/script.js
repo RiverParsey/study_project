@@ -6659,3 +6659,52 @@
 //     dots[slideIndex - 1].style.opacity = 1;
 //   });
 // });
+
+
+
+
+// module1-task122 как сохранить данные без БД. Работа с localStorage
+
+// localStorage.setItem('number', 5); // команда для записи нового ключа в локальное хранилище window, первый аргумент ключ, второй значение
+
+// localStorage.getItem('number'); // команда для получения значения элемента с локального хранилища
+
+// localStorage.removeItem('number'); // команда для удаления элемента с хранилища
+
+// localStorage.clear(); // полная очистка хранилища
+
+// const checkbox = document.querySelector('#checkbox'),
+//       form = document.querySelector('form'),
+//       change = document.querySelector('#color');
+
+// if (localStorage.getItem('isChecked')) {
+//   checkbox.checked = true;
+// }
+
+// if (localStorage.getItem('bg') === 'changed') {
+//   form.style.backgroundColor = 'red';
+// }
+
+// checkbox.addEventListener('change', () => {
+//   localStorage.setItem('isChecked', true);
+// });
+
+// change.addEventListener('click', () => {
+//   if (localStorage.getItem('bg') === 'changed') {
+//     localStorage.removeItem('bg');
+//     form.style.backgroundColor = '#fff';
+//   } else {
+//     localStorage.setItem('bg', 'changed');
+//     form.style.backgroundColor = 'red';
+//   }
+// });
+
+// const person = {
+//   name: 'Alex',
+//   age: 25
+// };
+
+// const serializedPeson = JSON.stringify(person);
+// localStorage.setItem('alex', serializedPeson);
+
+// console.log(JSON.parse(localStorage.getItem('alex')));
