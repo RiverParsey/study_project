@@ -7186,3 +7186,31 @@
 // console.log(ivan.surname);
 
 // ivan.say();
+
+
+
+
+
+// module1-task128 прием модуль, как и зачем его использовать
+
+// const number = 1;
+
+// (function(){
+//   let number = 2;
+//   console.log(number);
+//   console.log(number + 3);
+// }());
+
+// console.log(number);
+
+// const user = (function(){
+//   const privat = function() {
+//     console.log('I am private!');
+//   };
+
+//   return {
+//     sayHello: privat
+//   };
+// }());
+
+// user.sayHello();
