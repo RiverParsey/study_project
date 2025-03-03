@@ -7293,3 +7293,69 @@
 // }
 
 // console.log('normal');
+
+
+
+
+// module1-task134 создание своих ошибок
+
+// const data = [
+//   {
+//     id: 'box',
+//     tag: 'div'
+//   },
+//   {
+//     id: '',
+//     tag: 'nav'
+//   },
+//   {
+//     id: 'circle',
+//     tag: 'span'
+//   }
+// ]
+
+// data.forEach((blockObj, i) => {
+//   const block = document.createElement(blockObj.tag);
+
+//   if (!blockObj.id) throw new Error(`в данных под номером ${i + 1} нет id`);
+
+//   block.setAttribute('id', blockObj.id);
+//   document.body.append(block);
+// })
+
+// const err = new Error('bhdbgjs');
+// console.log(err.name, err.message, err.stack);
+
+
+// const data = [
+//   {
+//     id: 'box',
+//     tag: 'div'
+//   },
+//   {
+//     id: 'fff',
+//     tag: 'nav'
+//   },
+//   {
+//     id: 'circle',
+//     tag: ''
+//   }
+// ]
+
+// try {
+//   data.forEach((blockObj, i) => {
+//     const block = document.createElement(blockObj.tag);
+
+//     if (!blockObj.id) throw new SyntaxErrorError(`в данных под номером ${i + 1} нет id`);
+
+//     block.setAttribute('id', blockObj.id);
+//     document.body.append(block);
+//   })
+// } catch(e) {
+//   if (e.name === 'SyntaxError') {
+//     console.log(e.message);
+//   } else throw e;
+// }
+
+// const err = new Error('bhdbgjs');
+// console.log(err.name, err.message, err.stack);
