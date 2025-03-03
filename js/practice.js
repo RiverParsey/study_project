@@ -228,3 +228,11 @@
 
 // myModuleInstance.hello();
 // myModuleInstance.goodbye();
+
+
+
+// import {one as first, two} from './script';
+
+// console.log(first);
+
+// console.log(`${one} and ${two}`);
