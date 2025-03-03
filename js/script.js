@@ -7264,3 +7264,32 @@
 
 // только теория ничего практического
 // про то как создать хорошее портфолио на гитхаб
+
+
+
+
+
+// module1-task133 Ошибки. Как избежать “поломки” своего кода
+
+// try {
+//   console.log('Normal');
+// } catch(error) {
+//   console.log(error.name);
+//   console.log(error.message);
+//   console.log(error.stack)
+// } finally {
+
+// }
+
+// console.log('Still normal');
+
+
+// try {
+//   document.querySelector('.active').addEventListener('click', () => {
+//     console.log('click');
+//   });
+// } catch(e) {
+//   console.log(e);
+// }
+
+// console.log('normal');
