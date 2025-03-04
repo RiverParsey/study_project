@@ -7359,3 +7359,12 @@
 
 // const err = new Error('bhdbgjs');
 // console.log(err.name, err.message, err.stack);
+
+
+
+
+
+// module1-task135 Как превратить код ES6+ в старый формат ES5. Babel, Core.js и полифиллы
+
+// только теория так как у меня не написан проект
+// можен понадобится еще не один раз, очень полезный урок
