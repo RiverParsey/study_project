@@ -7572,3 +7572,30 @@
 // }, 0);
 
 // console.log(2);
+
+
+
+
+
+// module1-task142 макро и микрозадачи
+
+// setTimeout(() => console.log('timeout'));
+
+// Promise.resolve()
+//   .then(() => console.log('promise'));
+
+// queueMicrotask(() => console.log('wow'));
+
+// Promise.resolve()
+//   .then(() => console.log('promise_2'));
+
+
+// console.log('code');
+
+// () => {} macro task
+// microtask: then/catch/finally/await
+// render
+// () => {} macro task
+// microtask: then/catch/finally/await
+// render
+// () => {}
